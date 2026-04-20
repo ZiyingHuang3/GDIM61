@@ -3,11 +3,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
     public TMP_Text speakerNameText;
     private int allChoicesCompletedNextNode = -1;
+    private HashSet<int> visitedNodes = new HashSet<int>();
 
     [Header("Dialogue UI")]
     public GameObject dialoguePanel;
@@ -137,10 +139,13 @@ public class DialogueManager : MonoBehaviour
 
     private void SelectChoice(int nextNodeIndex)
     {
-        waitingForChoice = false;
-        choicePanel.SetActive(false);
-        currentNodeIndex = nextNodeIndex;
-        ShowCurrentNode();
+       visitedNodes.Add(nextNodeIndex);
+
+       waitingForChoice = false;
+       choicePanel.SetActive(false);
+
+       currentNodeIndex = nextNodeIndex;
+       ShowCurrentNode();
     }
 
     private void GoNext()
@@ -159,16 +164,6 @@ public class DialogueManager : MonoBehaviour
         ShowCurrentNode();
     }
 
-    private void SelectChoice(int nextNodeIndex)
-    {
-    visitedNodes.Add(nextNodeIndex);
-
-    waitingForChoice = false;
-    choicePanel.SetActive(false);
-
-    currentNodeIndex = nextNodeIndex;
-    ShowCurrentNode();
-    }
 
     public void EndDialogue()
     {

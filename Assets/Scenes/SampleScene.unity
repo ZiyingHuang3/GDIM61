@@ -257,60 +257,70 @@ MonoBehaviour:
     hasChoices: 0
     choices: []
     nextNodeIndex: 1
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: ...
     hasChoices: 0
     choices: []
     nextNodeIndex: 2
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: (Shoked) You can see me?
     hasChoices: 0
     choices: []
     nextNodeIndex: 3
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Hazel
     dialogueText: Yes. Do you still remember anything?
     hasChoices: 0
     choices: []
     nextNodeIndex: 4
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: (Frown) Not sure. My memory is fragment.
     hasChoices: 0
     choices: []
     nextNodeIndex: 5
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: (Frown) Not sure. My memory is fragment.
     hasChoices: 0
     choices: []
     nextNodeIndex: 6
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Hazel
     dialogueText: Do you remember anyone who came over?
     hasChoices: 0
     choices: []
     nextNodeIndex: 7
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: My suppoeter Will. assistant Merlin , and guest Monica.
     hasChoices: 0
     choices: []
     nextNodeIndex: 8
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Hazel
     dialogueText: Who do you suspect?
     hasChoices: 0
     choices: []
     nextNodeIndex: 8
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: (Dejected) They all don't like me.
     hasChoices: 0
     choices: []
     nextNodeIndex: 8
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Hazel
     dialogueText: Perhaps could ask some questions.
@@ -323,24 +333,28 @@ MonoBehaviour:
     - choiceText: Monica
       nextNodeIndex: 15
     nextNodeIndex: 17
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Hazel
     dialogueText: Why? Isn't Wiill your supporter? He has been by your side all along.
     hasChoices: 0
     choices: []
     nextNodeIndex: 12
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: He has ever trusted me. He is a very cautious person
     hasChoices: 0
     choices: []
     nextNodeIndex: 10
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Merlin
     dialogueText: What do you think of Merlin, he is your assistant
     hasChoices: 0
     choices: []
     nextNodeIndex: 14
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: He has always had a grudge against me. He always thinks I have
@@ -348,12 +362,14 @@ MonoBehaviour:
     hasChoices: 0
     choices: []
     nextNodeIndex: 10
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Hazel
     dialogueText: Was it you who invited Monica?
     hasChoices: 0
     choices: []
     nextNodeIndex: 16
+    afterAllChoicesNextNode: -1
   - speaker: 1
     speakerName: Bob
     dialogueText: She came by herself. She wanted me to delete the blog about her.
@@ -361,6 +377,7 @@ MonoBehaviour:
     hasChoices: 0
     choices: []
     nextNodeIndex: 10
+    afterAllChoicesNextNode: -1
   - speaker: 0
     speakerName: Hazel
     dialogueText: It seems there's nothing more to say. Maybe I can find something
@@ -368,6 +385,7 @@ MonoBehaviour:
     hasChoices: 0
     choices: []
     nextNodeIndex: -1
+    afterAllChoicesNextNode: -1
 --- !u!114 &315668209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,7 +833,7 @@ Transform:
   m_GameObject: {fileID: 562879918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.09, y: -0.33, z: 0}
+  m_LocalPosition: {x: -5.65, y: -2.05, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -860,7 +878,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &562879924
 BoxCollider2D:
   m_ObjectHideFlags: 0
