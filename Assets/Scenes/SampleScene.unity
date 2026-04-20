@@ -133,6 +133,10 @@ GameObject:
   - component: {fileID: 315668207}
   - component: {fileID: 315668206}
   - component: {fileID: 315668205}
+  - component: {fileID: 315668210}
+  - component: {fileID: 315668209}
+  - component: {fileID: 315668208}
+  - component: {fileID: 315668211}
   m_Layer: 0
   m_Name: Bob
   m_TagString: Untagged
@@ -207,7 +211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4d77eb29623fd0b4dbadb6c398f45b96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -228,12 +232,236 @@ Transform:
   m_GameObject: {fileID: 315668204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.977, y: 0, z: 0}
+  m_LocalPosition: {x: -4.85, y: 1.03, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &315668208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315668204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3127790790c71441cbdc8d59dd2ead68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodes:
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Who are you?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 1
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: ...
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 2
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: (Shoked) You can see me?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 3
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Yes. Do you still remember anything?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 4
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: (Frown) Not sure. My memory is fragment.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 5
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: (Frown) Not sure. My memory is fragment.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 6
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Do you remember anyone who came over?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 7
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: My suppoeter Will. assistant Merlin , and guest Monica.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 8
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Who do you suspect?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 8
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: (Dejected) They all don't like me.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 8
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Perhaps could ask some questions.
+    hasChoices: 1
+    choices:
+    - choiceText: Will
+      nextNodeIndex: 11
+    - choiceText: Merilin
+      nextNodeIndex: 13
+    - choiceText: Monica
+      nextNodeIndex: 15
+    nextNodeIndex: 17
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Why? Isn't Wiill your supporter? He has been by your side all along.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 12
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: He has ever trusted me. He is a very cautious person
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 10
+  - speaker: 0
+    speakerName: Merlin
+    dialogueText: What do you think of Merlin, he is your assistant
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 14
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: He has always had a grudge against me. He always thinks I have
+      too many responsibilities, but I merely ask him to do his part of the job.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 10
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Was it you who invited Monica?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 16
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: She came by herself. She wanted me to delete the blog about her.
+      The revealed truth was too much for her to accept.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 10
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: It seems there's nothing more to say. Maybe I can find something
+      to trigger some memories in him.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: -1
+--- !u!114 &315668209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315668204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c07f4274efe40a49f2785c0f9e6a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactHint: {fileID: 0}
+  dialogueData: {fileID: 315668208}
+--- !u!61 &315668210
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315668204}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.018310845, y: -0.13916197}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.33970332, y: 0.24448699}
+  m_EdgeRadius: 0
+--- !u!58 &315668211
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315668204}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.029297305, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.26872984
 --- !u!1 &512764150
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +728,7 @@ GameObject:
   - component: {fileID: 562879924}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,7 +794,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1570834915, guid: 3d5f4a8915218b6488aa7abe8691d88d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -587,7 +815,7 @@ Transform:
   m_GameObject: {fileID: 562879918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.77, y: -1.28, z: 0}
+  m_LocalPosition: {x: -6.09, y: -0.33, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
