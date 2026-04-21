@@ -113,27 +113,29 @@ public class DialogueManager : MonoBehaviour
                 int nextIndex = choices[i].nextNodeIndex;
                 choiceButtons[i].onClick.RemoveAllListeners();
                 choiceButtons[i].onClick.AddListener(() => SelectChoice(nextIndex));
+
                 activeCount++;
             }
             else
             {
                 choiceButtons[i].gameObject.SetActive(false);
             }
-                if (activeCount == 0)
-    {
-        choicePanel.SetActive(false);
-        waitingForChoice = false;
+        }
 
-        if (allChoicesCompletedNextNode != -1)
+        if (activeCount == 0)
         {
-            currentNodeIndex = allChoicesCompletedNextNode;
-            ShowCurrentNode();
-        }
-        else
-        {
-            EndDialogue();
-        }
-    }
+            choicePanel.SetActive(false);
+            waitingForChoice = false;
+
+            if (allChoicesCompletedNextNode != -1)
+            {
+                currentNodeIndex = allChoicesCompletedNextNode;
+                ShowCurrentNode();
+            }
+            else
+            {
+                EndDialogue();
+            }
         }
     }
 

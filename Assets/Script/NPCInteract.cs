@@ -15,7 +15,7 @@ public class NPCInteract : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.Space))
+        if (playerInRange && Input.GetMouseButtonDown(0))
         {
             if (!DialogueManager.Instance.IsDialogueActive)
             {
@@ -23,7 +23,16 @@ public class NPCInteract : MonoBehaviour
             }
         }
     }
-
+    void OnMouseDown()
+    {
+        if (playerInRange)
+        {
+            if (!DialogueManager.Instance.IsDialogueActive)
+            {
+                DialogueManager.Instance.StartDialogue(dialogueData, this);
+            }
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
