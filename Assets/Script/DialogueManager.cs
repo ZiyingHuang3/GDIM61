@@ -99,45 +99,45 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void ShowChoices(List<DialogueChoice> choices)
+{
+    choicePanel.SetActive(true);
+    int activeCount = 0;
+
+    for (int i = 0; i < choiceButtons.Length; i++)
     {
-        choicePanel.SetActive(true);
-        int activeCount = 0;
-
-        for (int i = 0; i < choiceButtons.Length; i++)
+        if (i < choices.Count && !visitedNodes.Contains(choices[i].nextNodeIndex))
         {
-            if (i < choices.Count)
-            {
-                choiceButtons[i].gameObject.SetActive(true);
-                choiceTexts[i].text = choices[i].choiceText;
+            choiceButtons[i].gameObject.SetActive(true);
+            choiceTexts[i].text = choices[i].choiceText;
 
-                int nextIndex = choices[i].nextNodeIndex;
-                choiceButtons[i].onClick.RemoveAllListeners();
-                choiceButtons[i].onClick.AddListener(() => SelectChoice(nextIndex));
+            int nextIndex = choices[i].nextNodeIndex;
+            choiceButtons[i].onClick.RemoveAllListeners();
+            choiceButtons[i].onClick.AddListener(() => SelectChoice(nextIndex));
 
-                activeCount++;
-            }
-            else
-            {
-                choiceButtons[i].gameObject.SetActive(false);
-            }
+            activeCount++;
         }
-
-        if (activeCount == 0)
+        else
         {
-            choicePanel.SetActive(false);
-            waitingForChoice = false;
-
-            if (allChoicesCompletedNextNode != -1)
-            {
-                currentNodeIndex = allChoicesCompletedNextNode;
-                ShowCurrentNode();
-            }
-            else
-            {
-                EndDialogue();
-            }
+            choiceButtons[i].gameObject.SetActive(false);
         }
     }
+
+    if (activeCount == 0)
+    {
+        choicePanel.SetActive(false);
+        waitingForChoice = false;
+
+        if (allChoicesCompletedNextNode != -1)
+        {
+            currentNodeIndex = allChoicesCompletedNextNode;
+            ShowCurrentNode();
+        }
+        else
+        {
+            EndDialogue();
+        }
+    }
+}
 
     private void SelectChoice(int nextNodeIndex)
     {
