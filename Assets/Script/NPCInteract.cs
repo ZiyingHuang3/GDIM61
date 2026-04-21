@@ -21,6 +21,7 @@ public class NPCInteract : MonoBehaviour
             {
                 DialogueManager.Instance.StartDialogue(dialogueData, this);
             }
+            Debug.Log("Space pressed near NPC: " + gameObject.name);
         }
     }
     void OnMouseDown()
