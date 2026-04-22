@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class NPCInteract : MonoBehaviour
 {
-    public GameObject interactHint;   // “Press Space” 提示
+    public GameObject interactHint;
     public DialogueData dialogueData;
 
     private bool playerInRange = false;
@@ -15,31 +16,36 @@ public class NPCInteract : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetMouseButtonDown(0))
+        if (!playerInRange) return;
+
+        if (Input.GetMouseButtonDown(0))
         {
-            if (!DialogueManager.Instance.IsDialogueActive)
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            if (InventoryUIManager.Instance != null &&
+                InventoryUIManager.Instance.inventoryPanel.activeSelf)
+                return;
+
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                DialogueManager.Instance.StartDialogue(dialogueData, this);
+                if (DialogueManager.Instance != null && !DialogueManager.Instance.IsDialogueActive)
+                {
+                    DialogueManager.Instance.StartDialogue(dialogueData, this);
+                }
             }
-            Debug.Log("Space pressed near NPC: " + gameObject.name);
         }
     }
-    void OnMouseDown()
-    {
-        if (playerInRange)
-        {
-            if (!DialogueManager.Instance.IsDialogueActive)
-            {
-                DialogueManager.Instance.StartDialogue(dialogueData, this);
-            }
-        }
-    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            if (interactHint != null && !DialogueManager.Instance.IsDialogueActive)
+            if (interactHint != null && DialogueManager.Instance != null && !DialogueManager.Instance.IsDialogueActive)
                 interactHint.SetActive(true);
         }
     }
@@ -62,7 +68,7 @@ public class NPCInteract : MonoBehaviour
 
     public void ShowHintIfPlayerInRange()
     {
-        if (playerInRange && interactHint != null && !DialogueManager.Instance.IsDialogueActive)
+        if (playerInRange && interactHint != null && DialogueManager.Instance != null && !DialogueManager.Instance.IsDialogueActive)
             interactHint.SetActive(true);
     }
 }

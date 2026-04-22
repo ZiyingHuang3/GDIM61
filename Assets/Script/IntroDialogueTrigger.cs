@@ -4,19 +4,13 @@ public class IntroDialogueTrigger : MonoBehaviour
 {
     public DialogueData introDialogueData;
     public bool hideAfterDialogue = true;
-    public bool startAutomatically = true;
 
     private bool hasStarted = false;
 
-    private void Start()
+    private void OnMouseDown()
     {
-        Debug.Log("IntroDialogueTrigger Start on " + gameObject.name);
-
-        if (!startAutomatically || GameProgress.introDialogueFinished || hasStarted)
-        {
-            Debug.Log("Intro skipped");
+        if (GameProgress.introDialogueFinished || hasStarted)
             return;
-        }
 
         if (DialogueManager.Instance == null)
         {
@@ -30,7 +24,6 @@ public class IntroDialogueTrigger : MonoBehaviour
             return;
         }
 
-        Debug.Log("Starting intro dialogue...");
         hasStarted = true;
         DialogueManager.Instance.StartDialogue(introDialogueData, null);
     }
