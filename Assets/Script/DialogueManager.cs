@@ -50,26 +50,41 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(DialogueData data, NPCInteract npc)
+{
+    Debug.Log("StartDialogue entered");
+
+    if (data == null)
     {
-        if (data == null || data.nodes.Count == 0) return;
-
-        IsDialogueActive = true;
-        currentDialogueData = data;
-        currentNodeIndex = 0;
-        currentNPC = npc;
-        waitingForChoice = false;
-
-        visitedNodes.Clear();
-        allChoicesCompletedNextNode = -1;
-
-        dialoguePanel.SetActive(true);
-        choicePanel.SetActive(false);
-
-        if (currentNPC != null)
-            currentNPC.HideHint();
-
-        ShowCurrentNode();
+        Debug.LogError("StartDialogue: data is null");
+        return;
     }
+
+    Debug.Log("StartDialogue: node count = " + data.nodes.Count);
+
+    if (data.nodes.Count == 0)
+    {
+        Debug.LogError("StartDialogue: data.nodes.Count == 0");
+        return;
+    }
+
+    IsDialogueActive = true;
+    currentDialogueData = data;
+    currentNodeIndex = 0;
+    currentNPC = npc;
+    waitingForChoice = false;
+
+    visitedNodes.Clear();
+    allChoicesCompletedNextNode = -1;
+
+    Debug.Log("Activating dialoguePanel");
+    dialoguePanel.SetActive(true);
+    choicePanel.SetActive(false);
+
+    if (currentNPC != null)
+        currentNPC.HideHint();
+
+    ShowCurrentNode();
+}
 
     private void ShowCurrentNode()
     {
@@ -168,19 +183,47 @@ public class DialogueManager : MonoBehaviour
 
 
     public void EndDialogue()
+{
+    Debug.Log("EndDialogue called");
+
+    if (currentDialogueData != null)
     {
-        IsDialogueActive = false;
-        waitingForChoice = false;
-        currentDialogueData = null;
-        currentNodeIndex = 0;
+        Debug.Log("currentDialogueData exists");
+        Debug.Log("isIntroDialogue = " + currentDialogueData.isIntroDialogue);
+    }
+    else
+    {
+        Debug.Log("currentDialogueData is null");
+    }
 
-        dialoguePanel.SetActive(false);
-        choicePanel.SetActive(false);
+    if (currentDialogueData != null && currentDialogueData.isIntroDialogue)
+    {
+        Debug.Log("Intro dialogue finished!");
+        GameProgress.introDialogueFinished = true;
 
-        if (currentNPC != null)
+        IntroDialogueTrigger introTrigger = currentDialogueData.GetComponent<IntroDialogueTrigger>();
+        Debug.Log("introTrigger = " + introTrigger);
+
+        if (introTrigger != null)
         {
-            currentNPC.ShowHintIfPlayerInRange();
-            currentNPC = null;
+            introTrigger.FinishIntroDialogue();
         }
     }
+
+    Debug.Log("introDialogueFinished = " + GameProgress.introDialogueFinished);
+
+    IsDialogueActive = false;
+    waitingForChoice = false;
+    currentDialogueData = null;
+    currentNodeIndex = 0;
+
+    dialoguePanel.SetActive(false);
+    choicePanel.SetActive(false);
+
+    if (currentNPC != null)
+    {
+        currentNPC.ShowHintIfPlayerInRange();
+        currentNPC = null;
+    }
+}
 }
