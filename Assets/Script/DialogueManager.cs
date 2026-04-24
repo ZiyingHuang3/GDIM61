@@ -86,6 +86,19 @@ public class DialogueManager : MonoBehaviour
     ShowCurrentNode();
 }
 
+public void StartSingleLineDialogue(string speakerName, string line)
+{
+    IsDialogueActive = true;
+    currentDialogueData = null;
+    waitingForChoice = false;
+
+    dialoguePanel.SetActive(true);
+    choicePanel.SetActive(false);
+
+    speakerNameText.text = speakerName;
+    dialogueText.text = line;
+}
+
     private void ShowCurrentNode()
     {
         if (currentDialogueData == null ||
@@ -165,21 +178,25 @@ public class DialogueManager : MonoBehaviour
        ShowCurrentNode();
     }
 
-    private void GoNext()
+ private void GoNext()
+{
+    if (currentDialogueData == null)
     {
-        if (currentDialogueData == null) return;
-
-        DialogueNode node = currentDialogueData.nodes[currentNodeIndex];
-
-        if (node.nextNodeIndex == -1)
-        {
-            EndDialogue();
-            return;
-        }
-
-        currentNodeIndex = node.nextNodeIndex;
-        ShowCurrentNode();
+        EndDialogue();
+        return;
     }
+
+    DialogueNode node = currentDialogueData.nodes[currentNodeIndex];
+
+    if (node.nextNodeIndex == -1)
+    {
+        EndDialogue();
+        return;
+    }
+
+    currentNodeIndex = node.nextNodeIndex;
+    ShowCurrentNode();
+}
 
 
     public void EndDialogue()

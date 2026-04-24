@@ -652,9 +652,9 @@ GameObject:
   - component: {fileID: 315668207}
   - component: {fileID: 315668206}
   - component: {fileID: 315668205}
-  - component: {fileID: 315668209}
   - component: {fileID: 315668208}
   - component: {fileID: 315668211}
+  - component: {fileID: 315668212}
   m_Layer: 0
   m_Name: Bob
   m_TagString: Untagged
@@ -912,20 +912,6 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 10
     afterAllChoicesNextNode: -1
---- !u!114 &315668209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315668204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c07f4274efe40a49f2785c0f9e6a85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactHint: {fileID: 0}
-  dialogueData: {fileID: 315668208}
 --- !u!58 &315668211
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -961,6 +947,23 @@ CircleCollider2D:
   m_Offset: {x: -0.2011867, y: 0}
   serializedVersion: 2
   m_Radius: 0.440619
+--- !u!114 &315668212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315668204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c7c426ff94646cfac07aea60f51a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introDialogue: {fileID: 315668208}
+  evidenceChoiceDialogue: {fileID: 771541057}
+  repeatSpeakerName: Hazel
+  repeatLineAfterIntro: It seems there's nothing more to say. Maybe I can find something
+    to trigger some memories in him.
 --- !u!1 &354852634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2427,186 @@ RectTransform:
   m_AnchoredPosition: {x: -77.421, y: 32.703}
   m_SizeDelta: {x: 1518.5, y: 62.613}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &771541056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 771541058}
+  - component: {fileID: 771541057}
+  m_Layer: 0
+  m_Name: Bob evidence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &771541057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771541056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3127790790c71441cbdc8d59dd2ead68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIntroDialogue: 0
+  nodes:
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: What do you want to ask me?
+    hasChoices: 0
+    choices:
+    - choiceText: Coffee
+      nextNodeIndex: 1
+    - choiceText: Entry and Exit Record
+      nextNodeIndex: 5
+    - choiceText: Chat record with the guest
+      nextNodeIndex: 10
+    - choiceText: A pen withou ink
+      nextNodeIndex: 14
+    nextNodeIndex: 0
+    afterAllChoicesNextNode: -1
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Do you usually drink coffee while recording?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 2
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: Somethimes I get very sleepy when recording late into the night.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 3
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Who usually gives you coffee?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 4
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: Merlin.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 0
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Were there any other people bsides these three who came?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 6
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: No
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 7
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: What did they comr for?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 8
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: (motionally agitated) They wanted to kill me!
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 9
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: (mentally) Let's change the topic.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 0
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: You had an argument with the guest.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 11
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: She wanted me to shut up
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 12
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Why?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 13
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: She thinks my radio station has affected her.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 0
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: How come this pen hasn't been thrown away yet when it has no ink?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 15
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: I' ve used it.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 16
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: For waht?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 17
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Bob
+    dialogueText: ...
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 0
+    afterAllChoicesNextNode: 0
+--- !u!4 &771541058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771541056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.4478855, y: 1.0214343, z: -0.15256721}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &775136826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,3 +4910,4 @@ SceneRoots:
   - {fileID: 285383362}
   - {fileID: 114455407}
   - {fileID: 1044014379}
+  - {fileID: 771541058}

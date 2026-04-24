@@ -7,7 +7,6 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
 
     public List<InventoryItemData> items = new List<InventoryItemData>();
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -25,4 +24,13 @@ public class InventoryManager : MonoBehaviour
             InventoryUIManager.Instance.RefreshInventoryUI();
         }
     }
+    public bool HasItem(InventoryItemData item)
+{
+    return items.Contains(item);
+}
+
+public bool HasAnyItem()
+{
+    return items.Count > 0;
+}
 }
