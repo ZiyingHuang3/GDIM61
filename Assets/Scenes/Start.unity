@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 772, y: 304.0072}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &22137970
@@ -1777,8 +1777,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASD movement, interaction with objects by using the space and talk with
-    characters by clicking
+  m_text: WASD movement, interaction with objects by using clicking and talk with
+    characters by the space
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f394f349de103343ac63af063030564, type: 2}
   m_sharedMaterial: {fileID: -6040115953683808374, guid: 4f394f349de103343ac63af063030564, type: 2}
