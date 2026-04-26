@@ -366,6 +366,8 @@ MonoBehaviour:
   targetSceneName: Game
   targetSpawnPosition: {x: -6, y: -2}
   requireIntroDialogueFinished: 1
+  requirePart1Complete: 0
+  requireReturnedToMap1: 0
   portalVisual: {fileID: 313200487}
 --- !u!61 &217959500
 BoxCollider2D:

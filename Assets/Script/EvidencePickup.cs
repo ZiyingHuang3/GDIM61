@@ -13,30 +13,36 @@ public class EvidencePickup : MonoBehaviour
             pickupHint.SetActive(false);
     }
 
-    private void Update()
+  private bool picked = false;
+
+private void Update()
+{
+    if (picked) return;
+    if (!playerInRange) return;
+
+    if (Input.GetMouseButtonDown(0))
     {
-        if (!playerInRange) return;
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (InventoryUIManager.Instance != null &&
+            InventoryUIManager.Instance.inventoryPanel.activeSelf)
+            return;
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
+
+        foreach (Collider2D hit in hits)
         {
-
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-                return;
-
-
-            if (InventoryUIManager.Instance != null &&
-                InventoryUIManager.Instance.inventoryPanel.activeSelf)
-                return;
-
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
+            if (hit.gameObject == gameObject)
             {
+                picked = true;
                 PickUp();
+                return;
             }
         }
     }
+}
 
     private void PickUp()
     {

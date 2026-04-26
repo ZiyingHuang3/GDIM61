@@ -7,9 +7,11 @@ public class ScenePortal : MonoBehaviour
     public Vector2 targetSpawnPosition;
 
     [Header("Unlock Condition")]
-    public bool requireIntroDialogueFinished = true;
+    public bool requireIntroDialogueFinished = false;
+    public bool requirePart1Complete = false;
+    public bool requireReturnedToMap1 = false;
 
-    [Header("Optional Visual")]
+    [Header("Visual")]
     public GameObject portalVisual;
 
     private bool isTransitioning = false;
@@ -27,6 +29,12 @@ public class ScenePortal : MonoBehaviour
     private bool IsUnlocked()
     {
         if (requireIntroDialogueFinished && !GameProgress.introDialogueFinished)
+            return false;
+
+        if (requirePart1Complete && !GameProgress.CanGoToNextMap())
+            return false;
+
+        if (requireReturnedToMap1 && !GameProgress.returnedToMap1)
             return false;
 
         return true;

@@ -3,6 +3,8 @@ using UnityEngine;
 public class NPCDialogueController : MonoBehaviour
 {
     [Header("Dialogue")]
+    [Header("Progress")]
+public bool markSoulDialogueComplete = false;
     public DialogueData introDialogue;
     public DialogueData evidenceChoiceDialogue;
 
@@ -25,7 +27,13 @@ public class NPCDialogueController : MonoBehaviour
             {
                 DialogueManager.Instance.StartDialogue(introDialogue, null);
                 introFinished = true;
-                return;
+               if (markSoulDialogueComplete)
+    {
+        GameProgress.soulDialogueComplete = true;
+        Debug.Log("Soul dialogue complete!");
+    }
+
+    return;
             }
 
             if (InventoryManager.Instance != null && InventoryManager.Instance.HasAnyItem())
