@@ -14,7 +14,6 @@ public class Part1EvidenceChecker : MonoBehaviour
         if (!GameProgress.part1EvidenceComplete &&
             InventoryManager.Instance.HasItem(coffee) &&
             InventoryManager.Instance.HasItem(pen) &&
-            InventoryManager.Instance.HasItem(button) &&
             InventoryManager.Instance.HasItem(autopsy))
         {
             GameProgress.part1EvidenceComplete = true;
