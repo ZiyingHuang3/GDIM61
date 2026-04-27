@@ -522,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &234569556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4516,7 +4516,6 @@ MonoBehaviour:
   coffee: {fileID: 11400000, guid: 008a7bf8d99b35f499d46914543c2fc5, type: 2}
   pen: {fileID: 11400000, guid: 573f5389f7a6d07498dc859c40fc39e6, type: 2}
   autopsy: {fileID: 11400000, guid: 4274952505b612a4bab87a9966a1cff5, type: 2}
-  button: {fileID: 11400000, guid: fc943a7c72d689c42a290f083e82a3c8, type: 2}
 --- !u!4 &1537632566
 Transform:
   m_ObjectHideFlags: 0
@@ -4868,7 +4867,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0cc82cba865454a59a697e8d211608c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

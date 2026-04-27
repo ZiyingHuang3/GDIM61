@@ -454,7 +454,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Will
-    dialogueText: .This is the standard procedure.
+    dialogueText: This is the standard procedure.
     hasChoices: 0
     choices: []
     nextNodeIndex: 6
@@ -480,9 +480,9 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 10
     afterAllChoicesNextNode: 0
-  - speaker: 1
-    speakerName: Will
-    dialogueText: What do you think of Ms. Merlin's view that Bob is trying to smear
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: What do you think of Ms. Monica's view that Bob is trying to smear
       her?
     hasChoices: 0
     choices: []
@@ -495,16 +495,16 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 9
     afterAllChoicesNextNode: 0
-  - speaker: 0
-    speakerName: Hazel
-    dialogueText: But it's still acceptable to others.
+  - speaker: 1
+    speakerName: Will
+    dialogueText: There are always some people who cannot accept the truth.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 9
+    nextNodeIndex: 12
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
-    dialogueText: How about the Monica
+    dialogueText: How about the Merlin?
     hasChoices: 0
     choices: []
     nextNodeIndex: 13
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 320073178}
   - component: {fileID: 320073183}
   m_Layer: 0
-  m_Name: Merlin
+  m_Name: Monica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,7 +651,7 @@ MonoBehaviour:
   nodes:
   - speaker: 0
     speakerName: Hazel
-    dialogueText: 'Miss Merlin, you entered the recording studio at 19:00. '
+    dialogueText: 'Miss Monica, you entered the recording studio at 19:00. '
     hasChoices: 0
     choices: []
     nextNodeIndex: 1

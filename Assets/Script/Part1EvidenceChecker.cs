@@ -5,7 +5,7 @@ public class Part1EvidenceChecker : MonoBehaviour
     public InventoryItemData coffee;
     public InventoryItemData pen;
     public InventoryItemData autopsy;
-    public InventoryItemData button;
+
 
     private void Update()
     {
