@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    private void Start()
+{
+    items.Clear();
+}
     public static InventoryManager Instance;
 
     public List<InventoryItemData> items = new List<InventoryItemData>();
@@ -13,10 +17,12 @@ public class InventoryManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void AddItem(InventoryItemData item)
-    {
-        if (item == null) return;
+  public void AddItem(InventoryItemData item)
+{
+    if (item == null) return;
 
+    if (!items.Contains(item))
+    {
         items.Add(item);
 
         if (InventoryUIManager.Instance != null)
@@ -24,6 +30,7 @@ public class InventoryManager : MonoBehaviour
             InventoryUIManager.Instance.RefreshInventoryUI();
         }
     }
+}
     public bool HasItem(InventoryItemData item)
 {
     return items.Contains(item);
