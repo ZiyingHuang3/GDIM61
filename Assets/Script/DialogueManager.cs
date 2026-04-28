@@ -51,6 +51,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueData data, NPCInteract npc)
 {
+    
     Debug.Log("StartDialogue entered");
 
     if (data == null)
@@ -66,6 +67,9 @@ public class DialogueManager : MonoBehaviour
         Debug.LogError("StartDialogue: data.nodes.Count == 0");
         return;
     }
+    Player player = FindObjectOfType<Player>();
+if (player != null)
+    player.enabled = false;
 
     IsDialogueActive = true;
     currentDialogueData = data;
@@ -88,6 +92,7 @@ public class DialogueManager : MonoBehaviour
 
 public void StartSingleLineDialogue(string speakerName, string line)
 {
+
     IsDialogueActive = true;
     currentDialogueData = null;
     waitingForChoice = false;
@@ -97,6 +102,9 @@ public void StartSingleLineDialogue(string speakerName, string line)
 
     speakerNameText.text = speakerName;
     dialogueText.text = line;
+    Player player = FindObjectOfType<Player>();
+if (player != null)
+    player.enabled = false;
 }
 
     private void ShowCurrentNode()
@@ -242,5 +250,8 @@ public void StartSingleLineDialogue(string speakerName, string line)
         currentNPC.ShowHintIfPlayerInRange();
         currentNPC = null;
     }
+    Player player = FindObjectOfType<Player>();
+if (player != null)
+    player.enabled = true;
 }
 }
