@@ -17,6 +17,8 @@ public class InventoryUIManager : MonoBehaviour
     [Header("List UI")]
     public Transform itemListParent;
     public GameObject itemButtonPrefab;
+    public GameObject recordScrollView;      
+    public TMP_Text recordDescriptionText; 
 
     private void Awake()
     {
@@ -62,12 +64,24 @@ public class InventoryUIManager : MonoBehaviour
         if (item == null) return;
 
         itemNameText.text = item.itemName;
-        itemDescriptionText.text = item.description;
 
         if (itemIconImage != null)
         {
             itemIconImage.sprite = item.icon;
             itemIconImage.enabled = item.icon != null;
+        }
+
+        if (item.itemName == "Check-in Record")
+        {
+            itemDescriptionText.gameObject.SetActive(false);
+            recordScrollView.SetActive(true);
+            recordDescriptionText.text = item.description;
+        }
+        else
+        {
+            recordScrollView.SetActive(false);
+            itemDescriptionText.gameObject.SetActive(true);
+            itemDescriptionText.text = item.description;
         }
     }
     public void CloseInventory()

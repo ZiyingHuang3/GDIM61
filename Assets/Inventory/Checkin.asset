@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2b9436ebaab2a479b9ff82f66825fb, type: 3}
+  m_Name: Checkin
+  m_EditorClassIdentifier: 
+  itemName: Check-in Record
+  description: '19:00  Guest enters the studio and argues with the victim.
+
+    19:11 
+    Guest leaves.
+
+    19:17  Assistant enters the studio.
+
+    19:30  Assistant
+    leaves the studio.
+
+    19:38  Supporter enters the studio.
+
+    19:51  Estimated
+    time of death.
+
+    19:56  Supporter leaves the studio.
+
+    20:07  Assistant
+    returns to the door and hears the victim still recording.
+
+    Next day body
+    discovered.'
+  icon: {fileID: 21300000, guid: ee906118fdc72134d890086415bb705a, type: 3}

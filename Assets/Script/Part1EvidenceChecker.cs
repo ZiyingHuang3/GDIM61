@@ -5,6 +5,7 @@ public class Part1EvidenceChecker : MonoBehaviour
     public InventoryItemData coffee;
     public InventoryItemData pen;
     public InventoryItemData autopsy;
+    public InventoryItemData calendar;
 
 
     private void Update()
@@ -14,6 +15,7 @@ public class Part1EvidenceChecker : MonoBehaviour
         if (!GameProgress.part1EvidenceComplete &&
             InventoryManager.Instance.HasItem(coffee) &&
             InventoryManager.Instance.HasItem(pen) &&
+               InventoryManager.Instance.HasItem(calendar) &&
             InventoryManager.Instance.HasItem(autopsy))
         {
             GameProgress.part1EvidenceComplete = true;

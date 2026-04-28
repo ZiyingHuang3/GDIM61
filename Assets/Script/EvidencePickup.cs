@@ -4,6 +4,8 @@ public class EvidencePickup : MonoBehaviour
 {
     public InventoryItemData itemData;
     public GameObject pickupHint;
+    public GameObject objectToHide;
+    public GameObject collectedHint;
 
     private bool playerInRange = false;
 
@@ -17,7 +19,7 @@ public class EvidencePickup : MonoBehaviour
 
 private void Update()
 {
-    if (picked) return;
+
     if (!playerInRange) return;
 
     if (Input.GetMouseButtonDown(0))
@@ -28,8 +30,13 @@ private void Update()
         if (InventoryUIManager.Instance != null &&
             InventoryUIManager.Instance.inventoryPanel.activeSelf)
             return;
+            if (picked)
+            {
+                ShowCollectedHint();
+                return;
+            }
 
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
 
         foreach (Collider2D hit in hits)
@@ -53,7 +60,11 @@ private void Update()
         if (pickupHint != null)
             pickupHint.SetActive(false);
 
-        Destroy(gameObject);
+        picked = true;
+        ShowCollectedHint() ;
+
+        if (objectToHide != null)
+            objectToHide.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,5 +87,20 @@ private void Update()
             if (pickupHint != null)
                 pickupHint.SetActive(false);
         }
+    }
+    void ShowCollectedHint()
+    {
+        if (collectedHint != null)
+        {
+            collectedHint.SetActive(true);
+            CancelInvoke(nameof(HideCollectedHint));
+            Invoke(nameof(HideCollectedHint), 2f);
+        }
+    }
+
+    void HideCollectedHint()
+    {
+        if (collectedHint != null)
+            collectedHint.SetActive(false);
     }
 }
