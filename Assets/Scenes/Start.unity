@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 589035308}
   - component: {fileID: 589035307}
   - component: {fileID: 589035309}
+  - component: {fileID: 589035310}
   m_Layer: 0
   m_Name: Introducer
   m_TagString: Untagged
@@ -686,8 +687,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 0.35223383, b: 0.7264151, a: 1}
+  m_Sprite: {fileID: -493786493, guid: 01989aa96e0fe0c42be9e84c68e6acdd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -706,8 +707,8 @@ Transform:
   m_GameObject: {fileID: 589035304}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.31, y: -0.07, z: 0}
-  m_LocalScale: {x: 1, y: 0.53093666, z: 1}
+  m_LocalPosition: {x: 2.31, y: -0.4, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -727,7 +728,7 @@ MonoBehaviour:
   isIntroDialogue: 1
   nodes:
   - speaker: 1
-    speakerName: Guide
+    speakerName: Cat
     dialogueText: ADWS movement, interaction with objects by using the space bar,
       and dialogue with characters by clicking.
     hasChoices: 0
@@ -735,7 +736,7 @@ MonoBehaviour:
     nextNodeIndex: 1
     afterAllChoicesNextNode: 0
   - speaker: 1
-    speakerName: Guide
+    speakerName: Cat
     dialogueText: You are a high school detective named Hazel. One day, by chance,
       you gained the ability to see souls.
     hasChoices: 0
@@ -743,7 +744,7 @@ MonoBehaviour:
     nextNodeIndex: 2
     afterAllChoicesNextNode: 0
   - speaker: 1
-    speakerName: Guide
+    speakerName: Cat
     dialogueText: You are a high school detective named Hazel. One day, by chance,
       you gained the ability to see souls.
     hasChoices: 0
@@ -751,7 +752,7 @@ MonoBehaviour:
     nextNodeIndex: 3
     afterAllChoicesNextNode: 0
   - speaker: 1
-    speakerName: Guide
+    speakerName: Cat
     dialogueText: Now you have been invited to participate in a case. The deceased
       was a respected radio host.
     hasChoices: 0
@@ -759,14 +760,14 @@ MonoBehaviour:
     nextNodeIndex: 4
     afterAllChoicesNextNode: 0
   - speaker: 1
-    speakerName: Guide
+    speakerName: Cat
     dialogueText: You will go to the first scene to investigate and solve this case.
     hasChoices: 0
     choices: []
     nextNodeIndex: 5
     afterAllChoicesNextNode: 0
   - speaker: 1
-    speakerName: Guide
+    speakerName: Cat
     dialogueText: The clues you have collected can be viewed by clicking on the "Evidence"
       button at the top right corner.
     hasChoices: 0
@@ -774,7 +775,7 @@ MonoBehaviour:
     nextNodeIndex: 6
     afterAllChoicesNextNode: 0
   - speaker: 1
-    speakerName: Guide
+    speakerName: Cat
     dialogueText: 'Good luck to you, young detective.
 
       (Please walk into the
@@ -831,7 +832,28 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.22619478
+--- !u!95 &589035310
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589035304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64256e5b655d5ce419e141f2471219d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &665868613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,8 +2634,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -274, y: 50}
-  m_SizeDelta: {x: 283.6795, y: 102.268}
+  m_AnchoredPosition: {x: -281.12778, y: 49.013}
+  m_SizeDelta: {x: 269.4239, y: 100.294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1843926434
 MonoBehaviour:
@@ -2635,7 +2657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Guide
+  m_text: Cat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1f60427737a43d46a9ea83771f7f35e, type: 2}
   m_sharedMaterial: {fileID: 5030500128913675561, guid: c1f60427737a43d46a9ea83771f7f35e, type: 2}
@@ -2698,7 +2720,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 15.298481, z: 0, w: 16.778963}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
