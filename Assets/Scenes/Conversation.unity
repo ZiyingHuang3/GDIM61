@@ -204,14 +204,15 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
-    dialogueText: No more...
+    dialogueText: '(thinking)I returned to the door and heard that Bob was still
+      recording. '
     hasChoices: 0
     choices: []
     nextNodeIndex: 5
     afterAllChoicesNextNode: 0
-  - speaker: 0
-    speakerName: Hazel
-    dialogueText: No more...
+  - speaker: 1
+    speakerName: Merlin
+    dialogueText: He didn't like being disturbed, so I didn't go in.
     hasChoices: 0
     choices: []
     nextNodeIndex: 6
