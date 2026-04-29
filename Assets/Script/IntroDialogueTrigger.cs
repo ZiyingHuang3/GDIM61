@@ -6,26 +6,44 @@ public class IntroDialogueTrigger : MonoBehaviour
     public bool hideAfterDialogue = true;
 
     private bool hasStarted = false;
+    private bool playerInRange = false;
 
-    private void OnMouseDown()
+    private void Update()
     {
         if (GameProgress.introDialogueFinished || hasStarted)
             return;
 
-        if (DialogueManager.Instance == null)
-        {
-            Debug.LogError("DialogueManager.Instance is null");
-            return;
-        }
+        if (!playerInRange) return;
 
-        if (introDialogueData == null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.LogError("introDialogueData is null on " + gameObject.name);
-            return;
-        }
+            if (DialogueManager.Instance == null)
+            {
+                Debug.LogError("DialogueManager.Instance is null");
+                return;
+            }
 
-        hasStarted = true;
-        DialogueManager.Instance.StartDialogue(introDialogueData, null);
+            if (introDialogueData == null)
+            {
+                Debug.LogError("introDialogueData is null on " + gameObject.name);
+                return;
+            }
+
+            hasStarted = true;
+            DialogueManager.Instance.StartDialogue(introDialogueData, null);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = false;
     }
 
     public void FinishIntroDialogue()
