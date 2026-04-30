@@ -4,9 +4,14 @@ using UnityEngine.EventSystems;
 public class NPCDialogueController : MonoBehaviour
 {
     [Header("Dialogue")]
+   
     public DialogueData introDialogue;
     public DialogueData evidenceChoiceDialogue;
 
+[Header("Suspect Progress")]
+public bool markGuestDialogueComplete = false;
+public bool markAssistantDialogueComplete = false;
+public bool markSupporterDialogueComplete = false;
     [Header("Repeat After Intro")]
     public string repeatSpeakerName = "Detective";
 
@@ -58,25 +63,37 @@ public class NPCDialogueController : MonoBehaviour
         if (DialogueManager.Instance == null) return;
         if (DialogueManager.Instance.IsDialogueActive) return;
 
-        if (!introFinished)
-        {
-            if (introDialogue == null) return;
+       if (!introFinished)
+{
+    DialogueManager.Instance.StartDialogue(introDialogue);
+    introFinished = true;
 
-            DialogueManager.Instance.StartDialogue(introDialogue);
-            introFinished = true;
+    if (markSoulDialogueComplete)
+    {
+        GameProgress.soulDialogueComplete = true;
+        Debug.Log("Soul dialogue complete!");
+    }
 
-            if (markIntroDialogueFinished)
-                GameProgress.introDialogueFinished = true;
+    if (markGuestDialogueComplete)
+    {
+        GameProgress.guestDialogueComplete = true;
+        Debug.Log("Guest dialogue complete!");
+    }
 
-            if (markSoulDialogueComplete)
-            {
-                GameProgress.soulDialogueComplete = true;
-                Debug.Log("Soul dialogue complete!");
-            }
+    if (markAssistantDialogueComplete)
+    {
+        GameProgress.assistantDialogueComplete = true;
+        Debug.Log("Assistant dialogue complete!");
+    }
 
-            return;
-        }
+    if (markSupporterDialogueComplete)
+    {
+        GameProgress.supporterDialogueComplete = true;
+        Debug.Log("Supporter dialogue complete!");
+    }
 
+    return;
+}
         if (InventoryManager.Instance != null &&
             InventoryManager.Instance.HasAnyItem() &&
             evidenceChoiceDialogue != null)

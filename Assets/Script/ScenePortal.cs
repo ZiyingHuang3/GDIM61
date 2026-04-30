@@ -10,6 +10,10 @@ public class ScenePortal : MonoBehaviour
     public bool requireIntroDialogueFinished = false;
     public bool requirePart1Complete = false;
     public bool requireReturnedToMap1 = false;
+    public bool requireAllSuspectDialogueComplete = false;
+public bool markReturnedToMap1 = false;
+public Collider2D portalCollider;
+
 
     [Header("Visual")]
     public GameObject portalVisual;
@@ -28,6 +32,8 @@ public class ScenePortal : MonoBehaviour
 
     private bool IsUnlocked()
     {
+        if (requireAllSuspectDialogueComplete && !GameProgress.CanReturnToMap1())
+    return false;
         if (requireIntroDialogueFinished && !GameProgress.introDialogueFinished)
             return false;
 
@@ -46,6 +52,8 @@ public class ScenePortal : MonoBehaviour
 
         if (portalVisual != null)
             portalVisual.SetActive(unlocked);
+            if (portalCollider != null)
+        portalCollider.enabled = unlocked;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -61,6 +69,10 @@ public class ScenePortal : MonoBehaviour
             SceneTransitionData.hasSpawnPosition = true;
 
             SceneManager.LoadScene(targetSceneName);
+            if (markReturnedToMap1)
+{
+    GameProgress.returnedToMap1 = true;
+}
         }
     }
 }
