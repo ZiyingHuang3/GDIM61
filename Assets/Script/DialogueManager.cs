@@ -234,19 +234,11 @@ private void GoNext()
         Debug.Log("currentDialogueData is null");
     }
 
-    if (currentDialogueData != null && currentDialogueData.isIntroDialogue)
-    {
-        Debug.Log("Intro dialogue finished!");
-        GameProgress.introDialogueFinished = true;
-
-        IntroDialogueTrigger introTrigger = currentDialogueData.GetComponent<IntroDialogueTrigger>();
-        Debug.Log("introTrigger = " + introTrigger);
-
-        if (introTrigger != null)
-        {
-            introTrigger.FinishIntroDialogue();
-        }
-    }
+if (currentDialogueData != null && currentDialogueData.isIntroDialogue)
+{
+    Debug.Log("Intro dialogue finished!");
+    GameProgress.introDialogueFinished = true;
+}
 
     Debug.Log("introDialogueFinished = " + GameProgress.introDialogueFinished);
 
