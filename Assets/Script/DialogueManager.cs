@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
 
     private DialogueData currentDialogueData;
     private int currentNodeIndex;
-    private NPCInteract currentNPC;
     private bool waitingForChoice = false;
     private bool ignoreNextClick = false;
 
@@ -65,7 +64,7 @@ private void Update()
     }
 }
 
-    public void StartDialogue(DialogueData data, NPCInteract npc)
+    public void StartDialogue(DialogueData data)
 {
     
     Debug.Log("StartDialogue entered");
@@ -90,7 +89,6 @@ if (player != null)
     IsDialogueActive = true;
     currentDialogueData = data;
     currentNodeIndex = 0;
-    currentNPC = npc;
     waitingForChoice = false;
 
     visitedNodes.Clear();
@@ -100,8 +98,6 @@ if (player != null)
     dialoguePanel.SetActive(true);
     choicePanel.SetActive(false);
 
-    if (currentNPC != null)
-        currentNPC.HideHint();
 
     ShowCurrentNode();
 }
@@ -262,11 +258,7 @@ private void GoNext()
     dialoguePanel.SetActive(false);
     choicePanel.SetActive(false);
 
-    if (currentNPC != null)
-    {
-        currentNPC.ShowHintIfPlayerInRange();
-        currentNPC = null;
-    }
+   
     Player player = FindObjectOfType<Player>();
 if (player != null)
     player.enabled = true;

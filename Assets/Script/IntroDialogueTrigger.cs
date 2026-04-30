@@ -39,7 +39,7 @@ public class IntroDialogueTrigger : MonoBehaviour
             }
 
             hasStarted = true;
-            DialogueManager.Instance.StartDialogue(introDialogueData, null);
+            DialogueManager.Instance.StartDialogue(introDialogueData);
         }
     }
 }

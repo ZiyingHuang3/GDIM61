@@ -635,10 +635,10 @@ GameObject:
   m_Component:
   - component: {fileID: 589035306}
   - component: {fileID: 589035305}
-  - component: {fileID: 589035308}
   - component: {fileID: 589035307}
   - component: {fileID: 589035309}
   - component: {fileID: 589035310}
+  - component: {fileID: 589035311}
   m_Layer: 0
   m_Name: Introducer
   m_TagString: Untagged
@@ -784,20 +784,6 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: -1
     afterAllChoicesNextNode: 0
---- !u!114 &589035308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589035304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb6e607cb74d4e13add8530f92a2884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  introDialogueData: {fileID: 589035307}
-  hideAfterDialogue: 1
 --- !u!58 &589035309
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -854,6 +840,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &589035311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589035304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c7c426ff94646cfac07aea60f51a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introDialogue: {fileID: 589035307}
+  evidenceChoiceDialogue: {fileID: 0}
+  repeatSpeakerName: Cat
+  repeatLineAfterIntro: Hurry up and solve the case
+  markIntroDialogueFinished: 1
+  markSoulDialogueComplete: 0
+  requirePlayerInRange: 1
 --- !u!1 &665868613
 GameObject:
   m_ObjectHideFlags: 0
