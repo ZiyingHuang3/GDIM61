@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     private int currentNodeIndex;
     private NPCInteract currentNPC;
     private bool waitingForChoice = false;
+    private bool ignoreNextClick = false;
 
     private void Awake()
     {
@@ -39,15 +40,30 @@ public class DialogueManager : MonoBehaviour
         choicePanel.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (!IsDialogueActive) return;
-
-       if (!waitingForChoice && Input.GetMouseButtonDown(0) && currentDialogueData != null)
+private void Update()
 {
-    GoNext();
-}
+    if (!IsDialogueActive) return;
+
+    if (Input.GetMouseButtonDown(0))
+    {
+        if (ignoreNextClick)
+        {
+            ignoreNextClick = false;
+            return;
+        }
+
+        if (currentDialogueData == null)
+        {
+            EndDialogue();
+            return;
+        }
+
+        if (!waitingForChoice)
+        {
+            GoNext();
+        }
     }
+}
 
     public void StartDialogue(DialogueData data, NPCInteract npc)
 {
@@ -92,7 +108,8 @@ if (player != null)
 
 public void StartSingleLineDialogue(string speakerName, string line)
 {
-
+    
+    ignoreNextClick = true;
     IsDialogueActive = true;
     currentDialogueData = null;
     waitingForChoice = false;

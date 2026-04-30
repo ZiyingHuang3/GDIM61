@@ -19,58 +19,70 @@ public class NPCDialogueController : MonoBehaviour
     private bool playerInRange = false;
     private bool introFinished = false;
 
-    private void Update()
+private void Update()
+{
+    if (!playerInRange) return;
+
+    if (Input.GetMouseButtonDown(0))
     {
-        if (!playerInRange) return;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
 
-        if (Input.GetMouseButtonDown(0))
+        bool clickedThisNPC = false;
+
+        foreach (Collider2D hit in hits)
         {
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-                return;
+            Debug.Log("Clicked collider: " + hit.gameObject.name);
 
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D hit = Physics2D.OverlapPoint(mousePos);
-
-            if (hit == null || hit.gameObject != gameObject)
-                return;
-
-            if (DialogueManager.Instance.IsDialogueActive) return;
-
-        if (!introFinished)
-{
-    Debug.Log("NPC: first intro dialogue");
-    DialogueManager.Instance.StartDialogue(introDialogue, null);
-    introFinished = true;
-    return;
-}
-
-if (InventoryManager.Instance != null && InventoryManager.Instance.HasAnyItem())
-{
-    Debug.Log("NPC: has evidence, start evidence choice");
-    DialogueManager.Instance.StartDialogue(evidenceChoiceDialogue, null);
-}
-else
-{
-    Debug.Log("NPC: no evidence, repeat line = " + repeatLineAfterIntro);
-    DialogueManager.Instance.StartSingleLineDialogue(
-        repeatSpeakerName,
-        repeatLineAfterIntro
-    );
-}
-
-            if (InventoryManager.Instance != null && InventoryManager.Instance.HasAnyItem())
+            if (hit.GetComponentInParent<NPCDialogueController>() == this)
             {
-                DialogueManager.Instance.StartDialogue(evidenceChoiceDialogue, null);
-            }
-            else
-            {
-                DialogueManager.Instance.StartSingleLineDialogue(
-                    repeatSpeakerName,
-                    repeatLineAfterIntro
-                );
+                clickedThisNPC = true;
+                break;
             }
         }
+
+        if (!clickedThisNPC)
+        {
+            Debug.Log("Did not click this NPC.");
+            return;
+        }
+
+        if (DialogueManager.Instance.IsDialogueActive)
+        {
+            Debug.Log("Dialogue is already active.");
+            return;
+        }
+
+        if (!introFinished)
+        {
+            Debug.Log("Start intro dialogue.");
+            DialogueManager.Instance.StartDialogue(introDialogue, null);
+            introFinished = true;
+
+            if (markSoulDialogueComplete)
+            {
+                GameProgress.soulDialogueComplete = true;
+                Debug.Log("Soul dialogue complete!");
+            }
+
+            return;
+        }
+
+        if (InventoryManager.Instance != null && InventoryManager.Instance.HasAnyItem())
+        {
+            Debug.Log("Start evidence dialogue.");
+            DialogueManager.Instance.StartDialogue(evidenceChoiceDialogue, null);
+        }
+        else
+        {
+            Debug.Log("Start repeat line.");
+            DialogueManager.Instance.StartSingleLineDialogue(
+                repeatSpeakerName,
+                repeatLineAfterIntro
+            );
+        }
     }
+}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -78,9 +90,5 @@ else
             playerInRange = true;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            playerInRange = false;
-    }
+
 }
