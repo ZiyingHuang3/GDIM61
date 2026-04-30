@@ -9,13 +9,22 @@ public class IntroDialogueTrigger : MonoBehaviour
     private bool playerInRange = false;
 
     private void Update()
+{
+    if (GameProgress.introDialogueFinished || hasStarted)
+        return;
+
+    if (!playerInRange) return;
+
+    if (Input.GetMouseButtonDown(0))
     {
-        if (GameProgress.introDialogueFinished || hasStarted)
+        if (UnityEngine.EventSystems.EventSystem.current != null &&
+            UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (!playerInRange) return;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D hit = Physics2D.OverlapPoint(mousePos);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (hit != null && hit.gameObject == gameObject)
         {
             if (DialogueManager.Instance == null)
             {
@@ -33,6 +42,7 @@ public class IntroDialogueTrigger : MonoBehaviour
             DialogueManager.Instance.StartDialogue(introDialogueData, null);
         }
     }
+}
 
     private void OnTriggerEnter2D(Collider2D other)
     {

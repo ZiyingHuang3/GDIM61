@@ -43,10 +43,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (!IsDialogueActive) return;
 
-        if (!waitingForChoice && Input.GetMouseButtonDown(0))
-        {
-            GoNext();
-        }
+       if (!waitingForChoice && Input.GetMouseButtonDown(0) && currentDialogueData != null)
+{
+    GoNext();
+}
     }
 
     public void StartDialogue(DialogueData data, NPCInteract npc)
@@ -186,7 +186,7 @@ if (player != null)
        ShowCurrentNode();
     }
 
- private void GoNext()
+private void GoNext()
 {
     if (currentDialogueData == null)
     {

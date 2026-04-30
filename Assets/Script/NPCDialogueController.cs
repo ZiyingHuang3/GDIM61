@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class NPCDialogueController : MonoBehaviour
 {
     [Header("Dialogue")]
     [Header("Progress")]
-public bool markSoulDialogueComplete = false;
+    public bool markSoulDialogueComplete = false;
+
     public DialogueData introDialogue;
     public DialogueData evidenceChoiceDialogue;
 
@@ -19,26 +21,46 @@ public bool markSoulDialogueComplete = false;
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.Space))
+        if (!playerInRange) return;
+
+        if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D hit = Physics2D.OverlapPoint(mousePos);
+
+            if (hit == null || hit.gameObject != gameObject)
+                return;
+
             if (DialogueManager.Instance.IsDialogueActive) return;
 
-            if (!introFinished)
-            {
-                DialogueManager.Instance.StartDialogue(introDialogue, null);
-                introFinished = true;
-               if (markSoulDialogueComplete)
-    {
-        GameProgress.soulDialogueComplete = true;
-        Debug.Log("Soul dialogue complete!");
-    }
-
+        if (!introFinished)
+{
+    Debug.Log("NPC: first intro dialogue");
+    DialogueManager.Instance.StartDialogue(introDialogue, null);
+    introFinished = true;
     return;
-            }
+}
+
+if (InventoryManager.Instance != null && InventoryManager.Instance.HasAnyItem())
+{
+    Debug.Log("NPC: has evidence, start evidence choice");
+    DialogueManager.Instance.StartDialogue(evidenceChoiceDialogue, null);
+}
+else
+{
+    Debug.Log("NPC: no evidence, repeat line = " + repeatLineAfterIntro);
+    DialogueManager.Instance.StartSingleLineDialogue(
+        repeatSpeakerName,
+        repeatLineAfterIntro
+    );
+}
 
             if (InventoryManager.Instance != null && InventoryManager.Instance.HasAnyItem())
             {
-                DialogueManager.Instance.StartDialogue(evidenceChoiceDialogue,null);
+                DialogueManager.Instance.StartDialogue(evidenceChoiceDialogue, null);
             }
             else
             {
