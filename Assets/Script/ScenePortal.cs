@@ -61,7 +61,6 @@ private void UpdatePortalState()
 
     if (portalVisual != null)
         portalVisual.SetActive(unlocked);
-
     if (portalCollider != null)
         portalCollider.enabled = unlocked;
 }

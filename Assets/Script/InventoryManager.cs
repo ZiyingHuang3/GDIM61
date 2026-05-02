@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    private void Start()
-{
-    items.Clear();
-}
+
     public static InventoryManager Instance;
 
     public List<InventoryItemData> items = new List<InventoryItemData>();
     private void Awake()
+{
+    if (Instance == null)
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        Instance = this;
+        DontDestroyOnLoad(gameObject); // ⭐ 跨场景保留
+
+        items.Clear(); // ⭐ 只在游戏第一次创建时清空
     }
+    else
+    {
+        Destroy(gameObject);
+    }
+}
 
   public void AddItem(InventoryItemData item)
 {
