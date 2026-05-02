@@ -229,6 +229,12 @@ private void GoNext()
 {
     Debug.Log("EndDialogue called");
 
+    if (currentDialogueData != null && currentDialogueData.markSoulDialogueCompleteOnEnd)
+{
+    GameProgress.soulDialogueComplete = true;
+    Debug.Log("Soul evidence dialogue complete! Portal unlocked.");
+}
+
     if (currentDialogueData != null)
     {
         Debug.Log("currentDialogueData exists");
@@ -238,6 +244,7 @@ private void GoNext()
     {
         Debug.Log("currentDialogueData is null");
     }
+
 
 if (currentDialogueData != null && currentDialogueData.isIntroDialogue)
 {

@@ -13,8 +13,9 @@ public static class GameProgress
 
     public static bool CanGoToNextMap()
     {
-        return part1EvidenceComplete && soulDialogueComplete;
+        return soulDialogueComplete;
     }
+  
     public static bool CanReturnToMap1()
     {
         return guestDialogueComplete &&

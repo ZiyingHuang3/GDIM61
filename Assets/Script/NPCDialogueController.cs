@@ -71,11 +71,6 @@ public bool markSupporterDialogueComplete = false;
     DialogueManager.Instance.StartDialogue(introDialogue);
     introFinished = true;
 
-    if (markSoulDialogueComplete)
-    {
-        GameProgress.soulDialogueComplete = true;
-        Debug.Log("Soul dialogue complete!");
-    }
 
     if (markGuestDialogueComplete)
     {

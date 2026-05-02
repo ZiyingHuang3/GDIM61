@@ -12,11 +12,15 @@ public class ScenePortal : MonoBehaviour
     public bool requireReturnedToMap1 = false;
     public bool requireAllSuspectDialogueComplete = false;
 public bool markReturnedToMap1 = false;
+private bool lastUnlocked = false;
 public Collider2D portalCollider;
+[Header("Visual")]
+public GameObject portalVisual;
 
 
-    [Header("Visual")]
-    public GameObject portalVisual;
+
+
+
 
     private bool isTransitioning = false;
 
@@ -25,11 +29,16 @@ public Collider2D portalCollider;
         UpdatePortalState();
     }
 
-    private void Update()
+  private void Update()
+{
+    bool unlocked = IsUnlocked();
+
+    if (unlocked != lastUnlocked)
     {
         UpdatePortalState();
+        lastUnlocked = unlocked;
     }
-
+}
     private bool IsUnlocked()
     {
         if (requireAllSuspectDialogueComplete && !GameProgress.CanReturnToMap1())
@@ -46,16 +55,16 @@ public Collider2D portalCollider;
         return true;
     }
 
-    private void UpdatePortalState()
-    {
-        bool unlocked = IsUnlocked();
+private void UpdatePortalState()
+{
+    bool unlocked = IsUnlocked();
 
-        if (portalVisual != null)
-            portalVisual.SetActive(unlocked);
-            if (portalCollider != null)
+    if (portalVisual != null)
+        portalVisual.SetActive(unlocked);
+
+    if (portalCollider != null)
         portalCollider.enabled = unlocked;
-    }
-
+}
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isTransitioning) return;
