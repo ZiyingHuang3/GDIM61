@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: Phone
   m_EditorClassIdentifier: 
   itemName: Bob's phone
-  description: 
+  description: 'A phone belonging to Bob.
+
+    Inside, there is a note describing
+    a recent dispute with Monica.
+
+    The conflict appears to be related to information
+    Bob planned to expose.'
   icon: {fileID: 21300000, guid: 9473bc520d16a8a44b0f4076ba42378d, type: 3}

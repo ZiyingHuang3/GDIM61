@@ -148,45 +148,50 @@ if (player != null)
     }
 
     private void ShowChoices(List<DialogueChoice> choices)
-{
-    choicePanel.SetActive(true);
-    int activeCount = 0;
-
-    for (int i = 0; i < choiceButtons.Length; i++)
     {
-        if (i < choices.Count && !visitedNodes.Contains(choices[i].nextNodeIndex))
+        choicePanel.SetActive(true);
+
+        int buttonIndex = 0;
+
+        for (int i = 0; i < choices.Count; i++)
         {
-            choiceButtons[i].gameObject.SetActive(true);
-            choiceTexts[i].text = choices[i].choiceText;
+            DialogueChoice choice = choices[i];
 
-            int nextIndex = choices[i].nextNodeIndex;
-            choiceButtons[i].onClick.RemoveAllListeners();
-            choiceButtons[i].onClick.AddListener(() => SelectChoice(nextIndex));
+            if (visitedNodes.Contains(choice.nextNodeIndex))
+                continue;
 
-            activeCount++;
+            if (choice.requiredEvidence != null &&
+                (InventoryManager.Instance == null ||
+                 !InventoryManager.Instance.items.Contains(choice.requiredEvidence)))
+            {
+                continue;
+            }
+
+            if (buttonIndex >= choiceButtons.Length)
+                break;
+
+            choiceButtons[buttonIndex].gameObject.SetActive(true);
+            choiceTexts[buttonIndex].text = choice.choiceText;
+
+            int nextIndex = choice.nextNodeIndex;
+            choiceButtons[buttonIndex].onClick.RemoveAllListeners();
+            choiceButtons[buttonIndex].onClick.AddListener(() => SelectChoice(nextIndex));
+
+            buttonIndex++;
         }
-        else
+
+        for (int i = buttonIndex; i < choiceButtons.Length; i++)
         {
             choiceButtons[i].gameObject.SetActive(false);
         }
-    }
 
-    if (activeCount == 0)
-    {
-        choicePanel.SetActive(false);
-        waitingForChoice = false;
-
-        if (allChoicesCompletedNextNode != -1)
+        if (buttonIndex == 0)
         {
-            currentNodeIndex = allChoicesCompletedNextNode;
-            ShowCurrentNode();
-        }
-        else
-        {
+            choicePanel.SetActive(false);
+            waitingForChoice = false;
             EndDialogue();
         }
     }
-}
 
     private void SelectChoice(int nextNodeIndex)
     {

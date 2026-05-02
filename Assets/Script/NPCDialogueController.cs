@@ -27,6 +27,9 @@ public bool markSupporterDialogueComplete = false;
 
     private bool playerInRange = false;
     private bool introFinished = false;
+    [Header("Evidence Required Dialogue")]
+    public InventoryItemData requiredEvidence;
+    public DialogueData afterEvidenceDialogue;
 
     private void Update()
     {
@@ -95,8 +98,15 @@ public bool markSupporterDialogueComplete = false;
     return;
 }
         if (InventoryManager.Instance != null &&
-            InventoryManager.Instance.HasAnyItem() &&
-            evidenceChoiceDialogue != null)
+     requiredEvidence != null &&
+     InventoryManager.Instance.items.Contains(requiredEvidence) &&
+     afterEvidenceDialogue != null)
+        {
+            DialogueManager.Instance.StartDialogue(afterEvidenceDialogue);
+        }
+        else if (InventoryManager.Instance != null &&
+                 InventoryManager.Instance.HasAnyItem() &&
+                 evidenceChoiceDialogue != null)
         {
             DialogueManager.Instance.StartDialogue(evidenceChoiceDialogue);
         }
@@ -107,6 +117,7 @@ public bool markSupporterDialogueComplete = false;
                 repeatLineAfterIntro
             );
         }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D other)

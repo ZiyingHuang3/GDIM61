@@ -7,6 +7,7 @@ public class Part1EvidenceChecker : MonoBehaviour
     public InventoryItemData autopsy;
     public InventoryItemData calendar;
     public InventoryItemData checkin;
+    public InventoryItemData phone;
 
     private void Update()
     {
@@ -16,6 +17,7 @@ public class Part1EvidenceChecker : MonoBehaviour
             InventoryManager.Instance.HasItem(coffee) &&
             InventoryManager.Instance.HasItem(pen) &&
                InventoryManager.Instance.HasItem(calendar) &&
+               InventoryManager.Instance.HasItem(phone) &&
                InventoryManager.Instance.HasItem(checkin) &&
             InventoryManager.Instance.HasItem(autopsy))
         {
