@@ -7,12 +7,23 @@ public class EvidencePickup : MonoBehaviour
     public GameObject objectToHide;
     public GameObject collectedHint;
 
+public string evidenceId;
     private bool playerInRange = false;
 
     private void Start()
     {
         if (pickupHint != null)
             pickupHint.SetActive(false);
+            if (!string.IsNullOrEmpty(evidenceId) &&
+        GameProgress.HasCollectedEvidence(evidenceId))
+    {
+        if (objectToHide != null)
+            objectToHide.SetActive(false);
+        else
+            gameObject.SetActive(false);
+
+        picked = true;
+    }
     }
 
   private bool picked = false;
@@ -59,6 +70,9 @@ private void Update()
 
         if (pickupHint != null)
             pickupHint.SetActive(false);
+             GameProgress.MarkEvidenceCollected(evidenceId);
+              if (pickupHint != null)
+        pickupHint.SetActive(false);
 
         picked = true;
         ShowCollectedHint() ;

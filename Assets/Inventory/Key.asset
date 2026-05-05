@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2b9436ebaab2a479b9ff82f66825fb, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  icon: {fileID: 0}
+  itemName: Key
+  description: It seems to be able to be used to open a certain lock.
+  icon: {fileID: 21300000, guid: b899d4c3295544c29b9c2a982b4a9d94, type: 3}

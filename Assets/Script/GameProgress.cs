@@ -1,30 +1,50 @@
+using System.Collections.Generic;
+
 public static class GameProgress
 {
     public static bool introDialogueFinished = false;
     public static bool evidenceScene1Finished = false;
     public static bool evidenceScene2Finished = false;
     public static bool returnedToMap1 = false;
-      public static bool part1EvidenceComplete = false;
+
+    public static bool part1EvidenceComplete = false;
     public static bool soulDialogueComplete = false;
-     public static bool guestDialogueComplete = false;
+
+    public static bool guestDialogueComplete = false;
     public static bool assistantDialogueComplete = false;
     public static bool supporterDialogueComplete = false;
+
     public static bool part2EvidenceComplete = false;
 
+    public static HashSet<string> collectedEvidenceIds = new HashSet<string>();
 
     public static bool CanGoToNextMap()
     {
         return soulDialogueComplete;
     }
-  
+
     public static bool CanReturnToMap1()
     {
         return guestDialogueComplete &&
                assistantDialogueComplete &&
                supporterDialogueComplete;
     }
+
     public static bool CanUsePortalAfterReturn()
-{
-    return returnedToMap1 && part2EvidenceComplete;
-}
+    {
+        return returnedToMap1 && part2EvidenceComplete;
+    }
+
+    public static bool HasCollectedEvidence(string evidenceId)
+    {
+        return collectedEvidenceIds.Contains(evidenceId);
+    }
+
+    public static void MarkEvidenceCollected(string evidenceId)
+    {
+        if (!string.IsNullOrEmpty(evidenceId))
+        {
+            collectedEvidenceIds.Add(evidenceId);
+        }
+    }
 }

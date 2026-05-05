@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2b9436ebaab2a479b9ff82f66825fb, type: 3}
   m_Name: Paper
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  icon: {fileID: 0}
+  itemName: Paper
+  description: It writed "0927" on it.
+  icon: {fileID: 21300000, guid: 993b1cdf10f4d4236a8a8534a55166c6, type: 3}

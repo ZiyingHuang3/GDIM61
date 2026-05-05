@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2b9436ebaab2a479b9ff82f66825fb, type: 3}
   m_Name: Notebook
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  icon: {fileID: 0}
+  itemName: Notebook
+  description: There are evidences inside that show Bob's distortion of the facts,
+    as well as his plan on the last page to betray Will.
+  icon: {fileID: 21300000, guid: 1bad9c3f6055a41e9b468e0364ac2c44, type: 3}
