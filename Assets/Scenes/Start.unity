@@ -368,7 +368,12 @@ MonoBehaviour:
   requireIntroDialogueFinished: 1
   requirePart1Complete: 0
   requireReturnedToMap1: 0
+  requireAllSuspectDialogueComplete: 0
+  requirePart2EvidenceComplete: 0
+  markReturnedToMap1: 0
+  hideAfterReturnedToMap1: 0
   portalVisual: {fileID: 313200487}
+  portalCollider: {fileID: 0}
 --- !u!61 &217959500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -726,6 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isIntroDialogue: 1
+  markSoulDialogueCompleteOnEnd: 0
   nodes:
   - speaker: 1
     speakerName: Cat
@@ -854,11 +860,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introDialogue: {fileID: 589035307}
   evidenceChoiceDialogue: {fileID: 0}
+  markGuestDialogueComplete: 0
+  markAssistantDialogueComplete: 0
+  markSupporterDialogueComplete: 0
   repeatSpeakerName: Cat
   repeatLineAfterIntro: Hurry up and solve the case
   markIntroDialogueFinished: 1
   markSoulDialogueComplete: 0
   requirePlayerInRange: 1
+  requiredEvidence: {fileID: 0}
+  afterEvidenceDialogue: {fileID: 0}
 --- !u!1 &665868613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,8 +1817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASD movement, interaction with objects by using clicking and talk with
-    characters by the space
+  m_text: WASD movement, interaction with objects and  characters by using clicking.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41bf4c4f7969c574ab8541e2a50f7494, type: 2}
   m_sharedMaterial: {fileID: -6317087366154139549, guid: 41bf4c4f7969c574ab8541e2a50f7494, type: 2}
@@ -1932,7 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2437,7 +2447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2639,8 +2649,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281.12778, y: 49.013}
-  m_SizeDelta: {x: 269.4239, y: 100.294}
+  m_AnchoredPosition: {x: -281.12778, y: 49.579987}
+  m_SizeDelta: {x: 269.4239, y: 99.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1843926434
 MonoBehaviour:
@@ -2689,8 +2699,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 66
+  m_fontSizeBase: 66
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2725,7 +2735,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 15.298481, z: 0, w: 16.778963}
+  m_margin: {x: 0, y: 22.745522, z: 0, w: 16.778963}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class LockedDrawer : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class LockedDrawer : MonoBehaviour
     public InventoryItemData rewardItem2;
 
     public string lockedSpeakerName = "Hazel";
-
+    public GameObject drawerUnlockedText;
     [TextArea(2, 4)]
     public string lockedMessage = "It seems locked. I need to find a key first.";
 
@@ -44,6 +45,18 @@ public class LockedDrawer : MonoBehaviour
         if (rewardItem2 != null)
             InventoryManager.Instance.AddItem(rewardItem2);
 
+
+        StartCoroutine(ShowDrawerText());
+
+
         Debug.Log("Drawer opened.");
+    }
+    IEnumerator ShowDrawerText()
+    {
+        drawerUnlockedText.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        drawerUnlockedText.SetActive(false);
     }
 }
