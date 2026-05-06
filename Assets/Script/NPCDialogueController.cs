@@ -14,6 +14,8 @@ public bool markAssistantDialogueComplete = false;
 public bool markSupporterDialogueComplete = false;
     [Header("Repeat After Intro")]
     public string repeatSpeakerName = "Detective";
+    [Header("Second Phase Repeat")]
+public bool repeatOnlyAfterReturnedToMap1 = false;
 
     [TextArea(2, 4)]
     public string repeatLineAfterIntro;
@@ -65,6 +67,14 @@ public bool markSupporterDialogueComplete = false;
     {
         if (DialogueManager.Instance == null) return;
         if (DialogueManager.Instance.IsDialogueActive) return;
+if (repeatOnlyAfterReturnedToMap1 && GameProgress.returnedToMap1)
+{
+    DialogueManager.Instance.StartSingleLineDialogue(
+        repeatSpeakerName,
+        repeatLineAfterIntro
+    );
+    return;
+}
 
        if (!introFinished)
 {
