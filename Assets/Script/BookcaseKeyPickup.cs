@@ -1,59 +1,80 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
 
-public class BookcaseKeyPickup : MonoBehaviour
+public class BookcasesKeyPickup : MonoBehaviour
 {
+    [Header("Reward")]
     public InventoryItemData keyItem;
 
-    public GameObject keyGetText; 
+    [Header("UI")]
+    public GameObject bookChoicePanel;
 
-    private bool picked = false;
+    [Header("Messages")]
+    public string speakerName = "Hazel";
+
+    [TextArea(2, 4)]
+    public string firstPhaseMessage = "It feels like something is missing. I need more information first.";
+
+    [TextArea(2, 4)]
+    public string wrongBookMessage = "This doesn't seem right.";
+
+    [TextArea(2, 4)]
+    public string correctBookMessage = "This book moved... there is a key hidden behind it.";
+
+    private bool gotKey = false;
+
+    private void Start()
+    {
+        if (bookChoicePanel != null)
+            bookChoicePanel.SetActive(false);
+    }
 
     private void OnMouseDown()
     {
-        Debug.Log("Clicked bookcase");
-
-        if (picked) return;
-
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        if (gotKey) return;
+
+        // 第一次搜证阶段：还没返回 Map1
+        if (!GameProgress.returnedToMap1)
         {
-            Debug.Log("Blocked by UI");
+            DialogueManager.Instance.StartSingleLineDialogue(speakerName, firstPhaseMessage);
             return;
         }
+
+        // 第二次搜证阶段：可以打开选书 UI
+        if (bookChoicePanel != null)
+            bookChoicePanel.SetActive(true);
+    }
+
+    public void ChooseCorrectBook()
+    {
+        if (gotKey) return;
 
         if (keyItem == null)
         {
-            Debug.LogError("Key Item is missing!");
-            return;
-        }
-
-        if (InventoryManager.Instance == null)
-        {
-            Debug.LogError("InventoryManager is missing!");
+            Debug.LogError("Key Item is missing on BookcasePuzzle.");
             return;
         }
 
         InventoryManager.Instance.AddItem(keyItem);
+        gotKey = true;
 
-        picked = true;
+        if (bookChoicePanel != null)
+            bookChoicePanel.SetActive(false);
 
-        Debug.Log("Got key: " + keyItem.itemName);
-
-        StartCoroutine(ShowKeyText());
-        var sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = false;
-
-        var col = GetComponent<Collider2D>();
-        if (col != null) col.enabled = false;
+        DialogueManager.Instance.StartSingleLineDialogue(speakerName, correctBookMessage);
     }
 
-    IEnumerator ShowKeyText()
+    public void ChooseWrongBook()
     {
-        keyGetText.SetActive(true);
+        DialogueManager.Instance.StartSingleLineDialogue(speakerName, wrongBookMessage);
+    }
 
-        yield return new WaitForSeconds(2f);
-
-        keyGetText.SetActive(false);
+    public void CloseBookPanel()
+    {
+        if (bookChoicePanel != null)
+            bookChoicePanel.SetActive(false);
     }
 }

@@ -285,7 +285,28 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
-    dialogueText: OK. Thank you very much.
+    dialogueText: OK. Do you think Bob has exhibited any unusual behavior recently?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 15
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Merlin
+    dialogueText: 'Oh yes, he has recently started reading books about law, '
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 16
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Merlin
+    dialogueText: but he hasn't had any interviews related to it.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 17
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: OK. Thank you very much for your cooperation.
     hasChoices: 0
     choices: []
     nextNodeIndex: -1
