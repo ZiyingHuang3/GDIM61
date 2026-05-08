@@ -161,6 +161,7 @@ MonoBehaviour:
   markAssistantDialogueComplete: 1
   markSupporterDialogueComplete: 0
   repeatSpeakerName: Hazel
+  repeatOnlyAfterReturnedToMap1: 0
   repeatLineAfterIntro: There's nothing more to say.
   markIntroDialogueFinished: 0
   markSoulDialogueComplete: 0
@@ -1178,6 +1179,7 @@ MonoBehaviour:
   markAssistantDialogueComplete: 0
   markSupporterDialogueComplete: 1
   repeatSpeakerName: Hazel
+  repeatOnlyAfterReturnedToMap1: 0
   repeatLineAfterIntro: There's nothing more to say.
   markIntroDialogueFinished: 0
   markSoulDialogueComplete: 0
@@ -1536,6 +1538,7 @@ MonoBehaviour:
   markAssistantDialogueComplete: 0
   markSupporterDialogueComplete: 0
   repeatSpeakerName: Hazel
+  repeatOnlyAfterReturnedToMap1: 0
   repeatLineAfterIntro: There's nothing more to say.
   markIntroDialogueFinished: 0
   markSoulDialogueComplete: 0
@@ -3404,7 +3407,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.709, y: -3.8436, z: 0.057142984}
-  m_LocalScale: {x: 3.642, y: 0.6928, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 482689905}
@@ -3450,7 +3453,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5589a6765402005429a6b27fa202375a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

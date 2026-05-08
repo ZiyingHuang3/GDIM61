@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Sprites;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BookcasesKeyPickup : MonoBehaviour
@@ -28,22 +29,35 @@ public class BookcasesKeyPickup : MonoBehaviour
         if (bookChoicePanel != null)
             bookChoicePanel.SetActive(false);
     }
-
-    private void OnMouseDown()
+    private void Update()
     {
+        if (!Input.GetMouseButtonDown(0)) return;
+
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
 
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.transform == transform || hit.transform.IsChildOf(transform))
+            {
+                TryOpenBookcase();
+                return;
+            }
+        }
+    }
+    private void TryOpenBookcase()
+    {
         if (gotKey) return;
 
-        // 第一次搜证阶段：还没返回 Map1
         if (!GameProgress.returnedToMap1)
         {
             DialogueManager.Instance.StartSingleLineDialogue(speakerName, firstPhaseMessage);
             return;
         }
 
-        // 第二次搜证阶段：可以打开选书 UI
         if (bookChoicePanel != null)
             bookChoicePanel.SetActive(true);
     }

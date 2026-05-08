@@ -28,39 +28,33 @@ public string evidenceId;
 
   private bool picked = false;
 
-private void Update()
-{
-
-    if (!playerInRange) return;
-
-    if (Input.GetMouseButtonDown(0))
+    private void Update()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            return;
+        if (picked) return;
+        if (!playerInRange) return;
 
-        if (InventoryUIManager.Instance != null &&
-            InventoryUIManager.Instance.inventoryPanel.activeSelf)
-            return;
-            if (picked)
-            {
-                ShowCollectedHint();
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                 return;
-            }
+
+            if (InventoryUIManager.Instance != null &&
+                InventoryUIManager.Instance.inventoryPanel.activeSelf)
+                return;
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
+            Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
 
-        foreach (Collider2D hit in hits)
-        {
-            if (hit.gameObject == gameObject)
+            foreach (Collider2D hit in hits)
             {
-                picked = true;
-                PickUp();
-                return;
+                if (hit.gameObject == gameObject)
+                {
+                    PickUp();
+                    return;
+                }
             }
         }
     }
-}
 
     private void PickUp()
     {
@@ -68,14 +62,19 @@ private void Update()
 
         InventoryManager.Instance.AddItem(itemData);
 
+        GameProgress.MarkEvidenceCollected(evidenceId);
+
         if (pickupHint != null)
             pickupHint.SetActive(false);
-             GameProgress.MarkEvidenceCollected(evidenceId);
-              if (pickupHint != null)
-        pickupHint.SetActive(false);
 
         picked = true;
-        ShowCollectedHint() ;
+
+        if (collectedHint != null)
+            ShowCollectedHint();
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+            col.enabled = false;
 
         if (objectToHide != null)
             objectToHide.SetActive(false);
