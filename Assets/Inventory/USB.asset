@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a2b9436ebaab2a479b9ff82f66825fb, type: 3}
-  m_Name: Paper
+  m_Name: USB
   m_EditorClassIdentifier: 
-  itemName: Paper
-  description: It wrote "527" on it.
-  icon: {fileID: 21300000, guid: 993b1cdf10f4d4236a8a8534a55166c6, type: 3}
+  itemName: USB Driver
+  description: 
+  icon: {fileID: 21300000, guid: 4071b177bbda3b44f8ba7731515f5bd5, type: 3}
