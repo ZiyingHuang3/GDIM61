@@ -14,6 +14,9 @@ public static class GameProgress
     public static bool assistantDialogueComplete = false;
     public static bool supporterDialogueComplete = false;
 
+
+public static bool returnedToDialogueSceneAgain = false;
+public static bool policeEvidenceComplete = false;
     public static bool part2EvidenceComplete = false;
 
     public static HashSet<string> collectedEvidenceIds = new HashSet<string>();
@@ -34,6 +37,11 @@ public static class GameProgress
     {
         return returnedToMap1 && part2EvidenceComplete;
     }
+
+    public static bool CanGoToDialogueSceneAgain()
+{
+    return returnedToMap1 && part2EvidenceComplete;
+}
 
     public static bool HasCollectedEvidence(string evidenceId)
     {

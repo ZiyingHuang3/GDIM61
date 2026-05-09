@@ -11,7 +11,10 @@ public class ScenePortal : MonoBehaviour
     public bool requirePart1Complete = false;
     public bool requireReturnedToMap1 = false;
     public bool requireAllSuspectDialogueComplete = false;
-    public bool requirePart2EvidenceComplete = false;
+    public bool markReturnedToDialogueSceneAgain = false;
+
+public bool requireSecondInvestigationComplete = false;   
+ public bool requirePart2EvidenceComplete = false;
 
     [Header("Mark Progress")]
     public bool markReturnedToMap1 = false;
@@ -62,6 +65,8 @@ public class ScenePortal : MonoBehaviour
 
         if (requirePart2EvidenceComplete && !GameProgress.part2EvidenceComplete)
             return false;
+        if (requireSecondInvestigationComplete && !GameProgress.CanGoToDialogueSceneAgain())
+            return false;
 
         return true;
     }
@@ -90,6 +95,11 @@ public class ScenePortal : MonoBehaviour
             {
                 GameProgress.returnedToMap1 = true;
             }
+
+            if (markReturnedToDialogueSceneAgain)
+        {
+            GameProgress.returnedToDialogueSceneAgain = true;
+        }
 
             SceneTransitionData.spawnPosition = targetSpawnPosition;
             SceneTransitionData.hasSpawnPosition = true;

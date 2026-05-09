@@ -2856,6 +2856,8 @@ MonoBehaviour:
   requirePart1Complete: 0
   requireReturnedToMap1: 0
   requireAllSuspectDialogueComplete: 0
+  markReturnedToDialogueSceneAgain: 1
+  requireSecondInvestigationComplete: 0
   requirePart2EvidenceComplete: 1
   markReturnedToMap1: 0
   hideAfterReturnedToMap1: 0
@@ -10065,8 +10067,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 11400000, guid: fc943a7c72d689c42a290f083e82a3c8, type: 2}
   Camera: {fileID: 11400000, guid: 016a07bc7f5844c79a090a43296e0394, type: 2}
-  Video: {fileID: 0}
-  Notebook: {fileID: 0}
+  Video: {fileID: 11400000, guid: 28253df9904941246bc973d749926b04, type: 2}
+  Notebook: {fileID: 11400000, guid: b56243ffe2b254e47bc784c805cc46ef, type: 2}
 --- !u!1 &1542896671
 GameObject:
   m_ObjectHideFlags: 0
@@ -12290,6 +12292,8 @@ MonoBehaviour:
   requirePart1Complete: 1
   requireReturnedToMap1: 0
   requireAllSuspectDialogueComplete: 0
+  markReturnedToDialogueSceneAgain: 0
+  requireSecondInvestigationComplete: 0
   requirePart2EvidenceComplete: 0
   markReturnedToMap1: 1
   hideAfterReturnedToMap1: 1
