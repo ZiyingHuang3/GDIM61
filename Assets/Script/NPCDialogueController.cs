@@ -4,18 +4,23 @@ using UnityEngine.EventSystems;
 public class NPCDialogueController : MonoBehaviour
 {
     [Header("Dialogue")]
-   
     public DialogueData introDialogue;
     public DialogueData evidenceChoiceDialogue;
 
-[Header("Suspect Progress")]
-public bool markGuestDialogueComplete = false;
-public bool markAssistantDialogueComplete = false;
-public bool markSupporterDialogueComplete = false;
+    [Header("Deduction Dialogue After Part 2")]
+    public bool useDeductionDialogueAfterPart2 = false;
+    public DialogueData deductionDialogue;
+
+    [Header("Suspect Progress")]
+    public bool markGuestDialogueComplete = false;
+    public bool markAssistantDialogueComplete = false;
+    public bool markSupporterDialogueComplete = false;
+
     [Header("Repeat After Intro")]
     public string repeatSpeakerName = "Detective";
+
     [Header("Second Phase Repeat")]
-public bool repeatOnlyAfterReturnedToMap1 = false;
+    public bool repeatOnlyAfterReturnedToMap1 = false;
 
     [TextArea(2, 4)]
     public string repeatLineAfterIntro;
@@ -29,6 +34,7 @@ public bool repeatOnlyAfterReturnedToMap1 = false;
 
     private bool playerInRange = false;
     private bool introFinished = false;
+
     [Header("Evidence Required Dialogue")]
     public InventoryItemData requiredEvidence;
     public DialogueData afterEvidenceDialogue;
@@ -67,45 +73,65 @@ public bool repeatOnlyAfterReturnedToMap1 = false;
     {
         if (DialogueManager.Instance == null) return;
         if (DialogueManager.Instance.IsDialogueActive) return;
-if (repeatOnlyAfterReturnedToMap1 && GameProgress.returnedToMap1)
-{
-    DialogueManager.Instance.StartSingleLineDialogue(
-        repeatSpeakerName,
-        repeatLineAfterIntro
-    );
-    return;
-}
 
-       if (!introFinished)
-{
-    DialogueManager.Instance.StartDialogue(introDialogue);
-    introFinished = true;
+        // 第二次搜证完成后，Start NPC 改成推理对话
+        if (useDeductionDialogueAfterPart2 &&
+            GameProgress.part2EvidenceComplete &&
+            deductionDialogue != null)
+        {
+            DialogueManager.Instance.StartDialogue(deductionDialogue);
+            return;
+        }
 
+        if (repeatOnlyAfterReturnedToMap1 && GameProgress.returnedToMap1)
+        {
+            DialogueManager.Instance.StartSingleLineDialogue(
+                repeatSpeakerName,
+                repeatLineAfterIntro
+            );
+            return;
+        }
 
-    if (markGuestDialogueComplete)
-    {
-        GameProgress.guestDialogueComplete = true;
-        Debug.Log("Guest dialogue complete!");
-    }
+        if (!introFinished)
+        {
+            DialogueManager.Instance.StartDialogue(introDialogue);
+            introFinished = true;
 
-    if (markAssistantDialogueComplete)
-    {
-        GameProgress.assistantDialogueComplete = true;
-        Debug.Log("Assistant dialogue complete!");
-    }
+            if (markIntroDialogueFinished)
+            {
+                GameProgress.introDialogueFinished = true;
+            }
 
-    if (markSupporterDialogueComplete)
-    {
-        GameProgress.supporterDialogueComplete = true;
-        Debug.Log("Supporter dialogue complete!");
-    }
+            if (markSoulDialogueComplete)
+            {
+                GameProgress.soulDialogueComplete = true;
+            }
 
-    return;
-}
+            if (markGuestDialogueComplete)
+            {
+                GameProgress.guestDialogueComplete = true;
+                Debug.Log("Guest dialogue complete!");
+            }
+
+            if (markAssistantDialogueComplete)
+            {
+                GameProgress.assistantDialogueComplete = true;
+                Debug.Log("Assistant dialogue complete!");
+            }
+
+            if (markSupporterDialogueComplete)
+            {
+                GameProgress.supporterDialogueComplete = true;
+                Debug.Log("Supporter dialogue complete!");
+            }
+
+            return;
+        }
+
         if (InventoryManager.Instance != null &&
-     requiredEvidence != null &&
-     InventoryManager.Instance.items.Contains(requiredEvidence) &&
-     afterEvidenceDialogue != null)
+            requiredEvidence != null &&
+            InventoryManager.Instance.items.Contains(requiredEvidence) &&
+            afterEvidenceDialogue != null)
         {
             DialogueManager.Instance.StartDialogue(afterEvidenceDialogue);
         }
@@ -122,7 +148,6 @@ if (repeatOnlyAfterReturnedToMap1 && GameProgress.returnedToMap1)
                 repeatLineAfterIntro
             );
         }
-       
     }
 
     private void OnTriggerEnter2D(Collider2D other)

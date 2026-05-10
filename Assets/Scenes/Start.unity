@@ -369,11 +369,13 @@ MonoBehaviour:
   requirePart1Complete: 0
   requireReturnedToMap1: 0
   requireAllSuspectDialogueComplete: 0
+  markReturnedToDialogueSceneAgain: 0
+  requireSecondInvestigationComplete: 1
   requirePart2EvidenceComplete: 0
   markReturnedToMap1: 0
   hideAfterReturnedToMap1: 0
   portalVisual: {fileID: 313200487}
-  portalCollider: {fileID: 0}
+  portalCollider: {fileID: 217959500}
 --- !u!61 &217959500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -644,6 +646,7 @@ GameObject:
   - component: {fileID: 589035309}
   - component: {fileID: 589035310}
   - component: {fileID: 589035311}
+  - component: {fileID: 589035312}
   m_Layer: 0
   m_Name: Introducer
   m_TagString: Untagged
@@ -860,6 +863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introDialogue: {fileID: 589035307}
   evidenceChoiceDialogue: {fileID: 0}
+  useDeductionDialogueAfterPart2: 1
+  deductionDialogue: {fileID: 0}
   markGuestDialogueComplete: 0
   markAssistantDialogueComplete: 0
   markSupporterDialogueComplete: 0
@@ -871,6 +876,143 @@ MonoBehaviour:
   requirePlayerInRange: 1
   requiredEvidence: {fileID: 0}
   afterEvidenceDialogue: {fileID: 0}
+--- !u!114 &589035312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589035304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3127790790c71441cbdc8d59dd2ead68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIntroDialogue: 0
+  markSoulDialogueCompleteOnEnd: 0
+  nodes:
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: Welcome back. I assume you already have your own answer now.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 1
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: 'Then let me ask you this: who added the laxative to the coffee?'
+    hasChoices: 1
+    choices:
+    - choiceText: Merlin
+      nextNodeIndex: 3
+      requiredEvidence: {fileID: 0}
+    - choiceText: Monica
+      nextNodeIndex: 2
+      requiredEvidence: {fileID: 0}
+    - choiceText: Will
+      nextNodeIndex: 2
+      requiredEvidence: {fileID: 0}
+    nextNodeIndex: 1
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: No, let me think about it again.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 1
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: Correct. Merlin was the one who prepared the coffee
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 4
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: Then why did Monica come to see Bob that night?
+    hasChoices: 1
+    choices:
+    - choiceText: "Because Monica had endured years of mistreatment from Bob and
+        finally decided she couldn\u2019t take it anymore."
+      nextNodeIndex: 5
+      requiredEvidence: {fileID: 0}
+    - choiceText: She went to confront Bob and demand that he clear up the false
+        accusations he made about her.
+      nextNodeIndex: 6
+      requiredEvidence: {fileID: 0}
+    nextNodeIndex: 4
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: Not quite. Merlin was the one being exploited.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 4
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: "That\u2019s right. Bob spread a lot of false rumors about people.
+      He wasn\u2019t a good person."
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 7
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: "So then\u2026 who do you think the real murderer is?"
+    hasChoices: 0
+    choices:
+    - choiceText: Merlin
+      nextNodeIndex: 8
+      requiredEvidence: {fileID: 0}
+    - choiceText: Monica
+      nextNodeIndex: 8
+      requiredEvidence: {fileID: 0}
+    - choiceText: Will
+      nextNodeIndex: 9
+      requiredEvidence: {fileID: 0}
+    nextNodeIndex: 7
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: "Wrong. It seems you\u2019re still not ready to solve more cases."
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: -1
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: "Correct. It seems you\u2019re finally ready to uncover the truth
+      hidden beneath every case."
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 10
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: "Correct. It seems you\u2019re finally ready to uncover the truth
+      hidden beneath every case."
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 11
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: "The path of a detective is never easy. Lies, fear, and distorted
+      truths will always stand in your way\u2026 but you managed to see through them."
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 12
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Cat
+    dialogueText: Keep moving forward, detective. More mysteries are waiting for
+      you.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: -1
+    afterAllChoicesNextNode: 0
 --- !u!1 &665868613
 GameObject:
   m_ObjectHideFlags: 0

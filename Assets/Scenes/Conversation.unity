@@ -1304,10 +1304,11 @@ MonoBehaviour:
   nodes:
   - speaker: 0
     speakerName: Hazel
-    dialogueText: 'Miss Monica, you entered the recording studio at 19:00. '
+    dialogueText: (mental) She is Miss Monica. She looks very angry. It seems that
+      one button is missing from her dress.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 1
+    nextNodeIndex: 10
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
@@ -1372,6 +1373,13 @@ MonoBehaviour:
     hasChoices: 0
     choices: []
     nextNodeIndex: -1
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: 'Miss Monica, you entered the recording studio at 19:00. '
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 1
     afterAllChoicesNextNode: 0
 --- !u!58 &320073179
 CircleCollider2D:
@@ -2122,6 +2130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836516886}
   - component: {fileID: 836516885}
+  - component: {fileID: 836516887}
   m_Layer: 0
   m_Name: Police
   m_TagString: Untagged
@@ -2196,6 +2205,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &836516887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836516883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68d26ebb044c46b9b5e84abf76c5029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evidence1: {fileID: 11400000, guid: 7b9d69bfa324248bc99153437b5e9278, type: 2}
+  evidence2: {fileID: 11400000, guid: 70fbc83c501274ede9b9f89f2adb5da4, type: 2}
 --- !u!1 &895695529
 GameObject:
   m_ObjectHideFlags: 0

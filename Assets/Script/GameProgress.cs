@@ -14,9 +14,9 @@ public static class GameProgress
     public static bool assistantDialogueComplete = false;
     public static bool supporterDialogueComplete = false;
 
+    public static bool returnedToDialogueSceneAgain = false;
+    public static bool policeEvidenceComplete = false;
 
-public static bool returnedToDialogueSceneAgain = false;
-public static bool policeEvidenceComplete = false;
     public static bool part2EvidenceComplete = false;
 
     public static HashSet<string> collectedEvidenceIds = new HashSet<string>();
@@ -33,14 +33,23 @@ public static bool policeEvidenceComplete = false;
                supporterDialogueComplete;
     }
 
+    // 新增：进入第二次搜证条件
+    public static bool CanEnterSecondInvestigation()
+    {
+        return policeEvidenceComplete &&
+               guestDialogueComplete &&
+               assistantDialogueComplete &&
+               supporterDialogueComplete;
+    }
+
     public static bool CanUsePortalAfterReturn()
     {
         return returnedToMap1 && part2EvidenceComplete;
     }
 
-    public static bool CanGoToDialogueSceneAgain()
+  public static bool CanGoToDialogueSceneAgain()
 {
-    return returnedToMap1 && part2EvidenceComplete;
+    return part2EvidenceComplete;
 }
 
     public static bool HasCollectedEvidence(string evidenceId)

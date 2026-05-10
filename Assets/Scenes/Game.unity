@@ -2850,14 +2850,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1733f134d613e46808e3938e6ae1c2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: 
+  targetSceneName: Start
   targetSpawnPosition: {x: 0, y: 0}
   requireIntroDialogueFinished: 0
   requirePart1Complete: 0
   requireReturnedToMap1: 0
   requireAllSuspectDialogueComplete: 0
-  markReturnedToDialogueSceneAgain: 1
-  requireSecondInvestigationComplete: 0
+  markReturnedToDialogueSceneAgain: 0
+  requireSecondInvestigationComplete: 1
   requirePart2EvidenceComplete: 1
   markReturnedToMap1: 0
   hideAfterReturnedToMap1: 0
