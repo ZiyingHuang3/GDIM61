@@ -27,16 +27,16 @@ public class InventoryManager : MonoBehaviour
 {
     if (item == null) return;
 
-    if (!items.Contains(item))
-    {
-        items.Add(item);
-
-        if (InventoryUIManager.Instance != null)
+        if (!items.Contains(item))
         {
-            InventoryUIManager.Instance.RefreshInventoryUI();
+            items.Add(item);
+
+            if (InventoryUIManager.Instance != null)
+            {
+                InventoryUIManager.Instance.RefreshInventoryUI();
+            }
         }
     }
-}
     public bool HasItem(InventoryItemData item)
 {
     return items.Contains(item);

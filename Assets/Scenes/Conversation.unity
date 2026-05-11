@@ -157,6 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introDialogue: {fileID: 42722361}
   evidenceChoiceDialogue: {fileID: 0}
+  useDeductionDialogueAfterPart2: 0
+  deductionDialogue: {fileID: 0}
   markGuestDialogueComplete: 0
   markAssistantDialogueComplete: 1
   markSupporterDialogueComplete: 0
@@ -1175,6 +1177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introDialogue: {fileID: 216191792}
   evidenceChoiceDialogue: {fileID: 0}
+  useDeductionDialogueAfterPart2: 0
+  deductionDialogue: {fileID: 0}
   markGuestDialogueComplete: 0
   markAssistantDialogueComplete: 0
   markSupporterDialogueComplete: 1
@@ -1542,6 +1546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introDialogue: {fileID: 320073178}
   evidenceChoiceDialogue: {fileID: 0}
+  useDeductionDialogueAfterPart2: 0
+  deductionDialogue: {fileID: 0}
   markGuestDialogueComplete: 1
   markAssistantDialogueComplete: 0
   markSupporterDialogueComplete: 0
@@ -1553,6 +1559,74 @@ MonoBehaviour:
   requirePlayerInRange: 1
   requiredEvidence: {fileID: 0}
   afterEvidenceDialogue: {fileID: 0}
+--- !u!1 &333367362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333367365}
+  - component: {fileID: 333367364}
+  - component: {fileID: 333367363}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &333367363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333367362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &333367364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333367362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &333367365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333367362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368762264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2205,10 @@ GameObject:
   - component: {fileID: 836516886}
   - component: {fileID: 836516885}
   - component: {fileID: 836516887}
+  - component: {fileID: 836516889}
+  - component: {fileID: 836516888}
+  - component: {fileID: 836516890}
+  - component: {fileID: 836516891}
   m_Layer: 0
   m_Name: Police
   m_TagString: Untagged
@@ -2179,7 +2257,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20fa46a0b86107b4aab1d1bc98f6c8e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2200,7 +2278,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.131872, y: -0.39, z: 0}
-  m_LocalScale: {x: 1, y: 2.4029, z: 1}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2219,6 +2297,156 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   evidence1: {fileID: 11400000, guid: 7b9d69bfa324248bc99153437b5e9278, type: 2}
   evidence2: {fileID: 11400000, guid: 70fbc83c501274ede9b9f89f2adb5da4, type: 2}
+--- !u!58 &836516888
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836516883}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.05946036}
+  serializedVersion: 2
+  m_Radius: 0.5594603
+--- !u!61 &836516889
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836516883}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0078089237, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.41354334, y: 0.64}
+  m_EdgeRadius: 0
+--- !u!114 &836516890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836516883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3127790790c71441cbdc8d59dd2ead68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIntroDialogue: 0
+  markSoulDialogueCompleteOnEnd: 0
+  nodes:
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: I found more evidence. Can you take a look?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 1
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Police
+    dialogueText: Understood. I will compile the offical reports for you.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 2
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Police
+    dialogueText: The detailed results have been added to your evidence.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 3
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Got it.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: -1
+    afterAllChoicesNextNode: 0
+--- !u!114 &836516891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836516883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c7c426ff94646cfac07aea60f51a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introDialogue: {fileID: 836516890}
+  evidenceChoiceDialogue: {fileID: 0}
+  useDeductionDialogueAfterPart2: 0
+  deductionDialogue: {fileID: 0}
+  markGuestDialogueComplete: 0
+  markAssistantDialogueComplete: 0
+  markSupporterDialogueComplete: 0
+  repeatSpeakerName: Hazel
+  repeatOnlyAfterReturnedToMap1: 0
+  repeatLineAfterIntro: 
+  markIntroDialogueFinished: 0
+  markSoulDialogueComplete: 0
+  requirePlayerInRange: 1
+  requiredEvidence: {fileID: 0}
+  afterEvidenceDialogue: {fileID: 0}
 --- !u!1 &895695529
 GameObject:
   m_ObjectHideFlags: 0
@@ -3635,3 +3863,4 @@ SceneRoots:
   - {fileID: 54433726}
   - {fileID: 482689905}
   - {fileID: 836516886}
+  - {fileID: 333367365}

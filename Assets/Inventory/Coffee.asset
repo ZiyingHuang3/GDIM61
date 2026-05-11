@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Coffee
   m_EditorClassIdentifier: 
   itemName: Coffee
-  description: Contains laxative
+  description: The color of this coffee looks weird
   icon: {fileID: 21300000, guid: e5456b82faaf76a46ad57412feb48665, type: 3}

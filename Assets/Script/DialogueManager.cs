@@ -86,12 +86,13 @@ private void Update()
 if (player != null)
     player.enabled = false;
 
-    IsDialogueActive = true;
-    currentDialogueData = data;
-    currentNodeIndex = 0;
-    waitingForChoice = false;
+        IsDialogueActive = true;
+        currentDialogueData = data;
+        currentNodeIndex = 0;
+        waitingForChoice = false;
+        ignoreNextClick = true;
 
-    visitedNodes.Clear();
+        visitedNodes.Clear();
     allChoicesCompletedNextNode = -1;
 
     Debug.Log("Activating dialoguePanel");

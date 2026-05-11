@@ -18,12 +18,18 @@ public class InventoryUIManager : MonoBehaviour
     public Transform itemListParent;
     public GameObject itemButtonPrefab;
     public GameObject recordScrollView;      
-    public TMP_Text recordDescriptionText; 
-
+    public TMP_Text recordDescriptionText;
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
@@ -33,6 +39,14 @@ public class InventoryUIManager : MonoBehaviour
 
     public void ToggleInventory()
     {
+        Debug.Log("Inventory button clicked");
+
+        if (inventoryPanel == null)
+        {
+            Debug.LogError("inventoryPanel is missing");
+            return;
+        }
+
         bool isOpen = inventoryPanel.activeSelf;
         inventoryPanel.SetActive(!isOpen);
 
