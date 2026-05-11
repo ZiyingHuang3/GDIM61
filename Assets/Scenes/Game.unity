@@ -2297,7 +2297,7 @@ MonoBehaviour:
   repeatLineAfterIntro: It seems there's nothing more to say. Maybe I can find something
     to trigger some memories in him.
   markIntroDialogueFinished: 0
-  markSoulDialogueComplete: 1
+  markSoulDialogueComplete: 0
   requirePlayerInRange: 1
   requiredEvidence: {fileID: 0}
   afterEvidenceDialogue: {fileID: 771541057}

@@ -23,7 +23,7 @@ public static class GameProgress
 
     public static bool CanGoToNextMap()
     {
-        return soulDialogueComplete;
+       return part1EvidenceComplete && soulDialogueComplete;
     }
 
     public static bool CanReturnToMap1()
@@ -33,7 +33,6 @@ public static class GameProgress
                supporterDialogueComplete;
     }
 
-    // 新增：进入第二次搜证条件
     public static bool CanEnterSecondInvestigation()
     {
         return policeEvidenceComplete &&

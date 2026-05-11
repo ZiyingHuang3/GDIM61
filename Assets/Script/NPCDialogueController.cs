@@ -74,7 +74,6 @@ public class NPCDialogueController : MonoBehaviour
         if (DialogueManager.Instance == null) return;
         if (DialogueManager.Instance.IsDialogueActive) return;
 
-        // 第二次搜证完成后，Start NPC 改成推理对话
         if (useDeductionDialogueAfterPart2 &&
             GameProgress.part2EvidenceComplete &&
             deductionDialogue != null)
