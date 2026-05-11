@@ -13,22 +13,9 @@ MonoBehaviour:
   m_Name: Checkin
   m_EditorClassIdentifier: 
   itemName: Check-in Record
-  description: '19:00  Guest enters the studio and argues with the victim.
-
-    19:11 
-    Guest leaves.
-
-    19:17  Assistant enters the studio.
-
-    19:30  Assistant
-    leaves the studio.
-
-    19:38  Supporter enters the studio.
-
-    19:51  Estimated
-    time of death.
-
-    19:56  Supporter leaves the studio.
-
-    Next day body discovered.'
+  description: "19:00  Monica enters the studio and argues with the victim.\n19:11 
+    Monica leaves.\n19:17  Will enters the studio.\n19:30  Will leaves the studio.\n19:38 
+    Merlin enters the studio.\n19:56  Merlin  leaves the studio.\n20:00 Will walked
+    through the recording studio and heard that the recording was still ongoing. 
+    \nNext day body discovered."
   icon: {fileID: 21300000, guid: ee906118fdc72134d890086415bb705a, type: 3}

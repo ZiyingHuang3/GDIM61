@@ -48,7 +48,7 @@ public static class GameProgress
 
   public static bool CanGoToDialogueSceneAgain()
 {
-    return part2EvidenceComplete;
+    return returnedToMap1 && part2EvidenceComplete;
 }
 
     public static bool HasCollectedEvidence(string evidenceId)

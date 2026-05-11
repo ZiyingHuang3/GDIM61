@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Button
   m_EditorClassIdentifier: 
   itemName: Button
-  description: Found in trash
+  description: Found in trash, covered with blood stains
   icon: {fileID: 21300000, guid: 969c3938983421d4c805cbebe4f087f0, type: 3}

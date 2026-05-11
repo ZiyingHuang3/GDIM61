@@ -187,7 +187,7 @@ MonoBehaviour:
   nodes:
   - speaker: 0
     speakerName: Hazel
-    dialogueText: Mr. Merlin, may I ask what you did in the recording studio at 19:17?
+    dialogueText: Mr. Merlin, may I ask what you did in the recording studio at 19:38
     hasChoices: 0
     choices: []
     nextNodeIndex: 1
@@ -207,76 +207,61 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 3
     afterAllChoicesNextNode: 0
-  - speaker: 0
-    speakerName: Hazel
-    dialogueText: Is there nothing else?
-    hasChoices: 0
-    choices: []
-    nextNodeIndex: 4
-    afterAllChoicesNextNode: 0
-  - speaker: 1
-    speakerName: Merlin
-    dialogueText: '(thinking)I returned to the door and heard that Bob was still
-      recording. '
-    hasChoices: 0
-    choices: []
-    nextNodeIndex: 5
-    afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: He didn't like being disturbed, so I didn't go in.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 6
+    nextNodeIndex: 4
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: What kind of person do you think Mr. Bob is?
     hasChoices: 0
     choices: []
-    nextNodeIndex: 7
+    nextNodeIndex: 5
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: He is very demanding and extremely picky.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 8
+    nextNodeIndex: 6
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: But everyone believes that he is a good person.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 9
+    nextNodeIndex: 7
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: These two are not in conflict.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 10
+    nextNodeIndex: 8
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: (Out of sight) ...
     hasChoices: 0
     choices: []
-    nextNodeIndex: 11
+    nextNodeIndex: 9
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: What about Mr. Will?
     hasChoices: 0
     choices: []
-    nextNodeIndex: 12
+    nextNodeIndex: 10
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: 'He is a very gentle person. '
     hasChoices: 0
     choices: []
-    nextNodeIndex: 13
+    nextNodeIndex: 11
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
@@ -284,28 +269,28 @@ MonoBehaviour:
       always comforts me.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 14
+    nextNodeIndex: 12
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: OK. Do you think Bob has exhibited any unusual behavior recently?
     hasChoices: 0
     choices: []
-    nextNodeIndex: 15
+    nextNodeIndex: 13
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: 'Oh yes, he has recently started reading books about law, '
     hasChoices: 0
     choices: []
-    nextNodeIndex: 16
+    nextNodeIndex: 14
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: but he hasn't had any interviews related to it.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 17
+    nextNodeIndex: 15
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
@@ -1005,7 +990,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
-    dialogueText: I'd like to ask you, what were you doing at 11:38 when you went
+    dialogueText: I'd like to ask you, what were you doing at 19:17when you went
       to see Bob?
     hasChoices: 0
     choices: []
@@ -1023,7 +1008,7 @@ MonoBehaviour:
     dialogueText: This is the standard procedure.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 6
+    nextNodeIndex: 16
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
@@ -1095,6 +1080,36 @@ MonoBehaviour:
     hasChoices: 0
     choices: []
     nextNodeIndex: -1
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: I understand. Thank you.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 17
+    afterAllChoicesNextNode: 0
+  - speaker: 0
+    speakerName: Hazel
+    dialogueText: Did you have anything you wanted to tell Bob when you passed by
+      the recording studio at eight o'clock?
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 18
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Will
+    dialogueText: Yes, I originally intended to explain the arrangements for today
+      to him.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 19
+    afterAllChoicesNextNode: 0
+  - speaker: 1
+    speakerName: Will
+    dialogueText: But he doesn't like being disturbed when recording.
+    hasChoices: 0
+    choices: []
+    nextNodeIndex: 6
     afterAllChoicesNextNode: 0
 --- !u!212 &216191793
 SpriteRenderer:
