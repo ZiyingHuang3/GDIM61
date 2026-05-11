@@ -2823,7 +2823,7 @@ MonoBehaviour:
   requireAllSuspectDialogueComplete: 0
   markReturnedToDialogueSceneAgain: 0
   requireSecondInvestigationComplete: 1
-  requirePart2EvidenceComplete: 1
+  requirePart2EvidenceComplete: 0
   markReturnedToMap1: 0
   hideAfterReturnedToMap1: 0
   portalVisual: {fileID: 55366907}
@@ -6675,8 +6675,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.923889, y: 2.8486023}
-  m_SizeDelta: {x: 15.848, y: 9.6972}
+  m_AnchoredPosition: {x: 13.979401, y: -1.136795}
+  m_SizeDelta: {x: 31.959, y: 35.665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967530019
 MonoBehaviour:

@@ -370,7 +370,7 @@ MonoBehaviour:
   requireReturnedToMap1: 0
   requireAllSuspectDialogueComplete: 0
   markReturnedToDialogueSceneAgain: 0
-  requireSecondInvestigationComplete: 1
+  requireSecondInvestigationComplete: 0
   requirePart2EvidenceComplete: 0
   markReturnedToMap1: 0
   hideAfterReturnedToMap1: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
   introDialogue: {fileID: 589035307}
   evidenceChoiceDialogue: {fileID: 0}
   useDeductionDialogueAfterPart2: 1
-  deductionDialogue: {fileID: 0}
+  deductionDialogue: {fileID: 589035312}
   markGuestDialogueComplete: 0
   markAssistantDialogueComplete: 0
   markSupporterDialogueComplete: 0
