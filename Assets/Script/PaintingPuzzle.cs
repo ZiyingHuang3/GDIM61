@@ -32,11 +32,16 @@ public class PaintingPuzzle : MonoBehaviour
 
     private void Update()
     {
+    
         if (solved) return;
 
         if (Input.GetMouseButtonDown(0))
         {
+
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
+            if (DialogueManager.Instance != null &&
+    DialogueManager.Instance.IsDialogueActive)
                 return;
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

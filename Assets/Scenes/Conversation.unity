@@ -194,8 +194,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Merlin
-    dialogueText: (Shifting his gaze away) Mr. Bob needs to do some preparations
-      before the recording.
+    dialogueText: Mr. Bob needs to do some preparations before the recording.
     hasChoices: 0
     choices: []
     nextNodeIndex: 2
@@ -273,7 +272,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
-    dialogueText: OK. Do you think Bob has exhibited any unusual behavior recently?
+    dialogueText: OK. Do you think Bob has shown any unusual behavior recently?
     hasChoices: 0
     choices: []
     nextNodeIndex: 13
@@ -990,7 +989,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
-    dialogueText: I'd like to ask you, what were you doing at 19:17when you went
+    dialogueText: I'd like to ask you, what were you doing at 19:17 when you went
       to see Bob?
     hasChoices: 0
     choices: []
@@ -998,7 +997,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Will
-    dialogueText: 'I''ll check with him to confirm the truth to be revealed today. '
+    dialogueText: 'I was checking with him to confirm the truth to be revealed today. '
     hasChoices: 0
     choices: []
     nextNodeIndex: 5
@@ -1022,7 +1021,7 @@ MonoBehaviour:
     dialogueText: He is a very good partner, very kind and easy to get along with.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 98
+    nextNodeIndex: 8
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Will
@@ -1033,8 +1032,8 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
-    dialogueText: What do you think of Ms. Monica's view that Bob is trying to smear
-      her?
+    dialogueText: What do you think of Ms. Monica's view that Bob was trying to ruin
+      her reputation?
     hasChoices: 0
     choices: []
     nextNodeIndex: 11
@@ -1055,21 +1054,21 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
-    dialogueText: How about the Merlin?
+    dialogueText: How about Merlin?
     hasChoices: 0
     choices: []
     nextNodeIndex: 13
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Will
-    dialogueText: 'She is a very obedient child who works hard, '
+    dialogueText: 'He is a very obedient child who works hard, '
     hasChoices: 0
     choices: []
     nextNodeIndex: 14
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Will
-    dialogueText: but she is not very careful.
+    dialogueText: but he is not very careful.
     hasChoices: 0
     choices: []
     nextNodeIndex: 15
@@ -1323,11 +1322,11 @@ MonoBehaviour:
   nodes:
   - speaker: 0
     speakerName: Hazel
-    dialogueText: (mental) She is Miss Monica. She looks very angry. It seems that
-      one button is missing from her dress.
+    dialogueText: She is Miss Monica. She looks very angry. It seems that one button
+      is missing from her shirt.
     hasChoices: 0
     choices: []
-    nextNodeIndex: 10
+    nextNodeIndex: 1
     afterAllChoicesNextNode: 0
   - speaker: 0
     speakerName: Hazel
@@ -1345,7 +1344,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Monica
-    dialogueText: I hope he can clarify what he said in the previous radio program.
+    dialogueText: I hope he can clarify what he said in the previous podcast.
     hasChoices: 0
     choices: []
     nextNodeIndex: 4
@@ -1366,7 +1365,7 @@ MonoBehaviour:
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Monica
-    dialogueText: His smear campaign against me caused me to lose my job.
+    dialogueText: I lost my job because of the lies he spread about me.
     hasChoices: 0
     choices: []
     nextNodeIndex: 5
@@ -1377,13 +1376,6 @@ MonoBehaviour:
     hasChoices: 0
     choices: []
     nextNodeIndex: 8
-    afterAllChoicesNextNode: 0
-  - speaker: 0
-    speakerName: Hazel
-    dialogueText: What did you do in the recording studio for those eleven minutes?
-    hasChoices: 0
-    choices: []
-    nextNodeIndex: 9
     afterAllChoicesNextNode: 0
   - speaker: 1
     speakerName: Monica
@@ -2456,7 +2448,7 @@ MonoBehaviour:
   markSupporterDialogueComplete: 0
   repeatSpeakerName: Hazel
   repeatOnlyAfterReturnedToMap1: 0
-  repeatLineAfterIntro: 
+  repeatLineAfterIntro: That is all I can get from the police.
   markIntroDialogueFinished: 0
   markSoulDialogueComplete: 0
   requirePlayerInRange: 1

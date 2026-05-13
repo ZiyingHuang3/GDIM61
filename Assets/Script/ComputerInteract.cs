@@ -10,7 +10,9 @@ public class ComputerInteract : MonoBehaviour
     public string speakerName = "Hazel";
     public string inspectMessage = "These paintings seem like they can rotate.";
     public string solvedMessage = "After rotating them in order, a USB drive fell out.";
+    public InventoryItemData recordingEvidence;
 
+    private bool evidenceAdded = false;
     private void Start()
     {
         if (computerPanel != null)
@@ -45,11 +47,23 @@ public class ComputerInteract : MonoBehaviour
         if (InventoryManager.Instance != null &&
             InventoryManager.Instance.HasItem(usbItem))
         {
-            DialogueManager.Instance.StartSingleLineDialogue(speakerName, solvedMessage);
+            DialogueManager.Instance.StartSingleLineDialogue(
+                speakerName,
+                solvedMessage
+            );
+
+            if (!evidenceAdded)
+            {
+                InventoryManager.Instance.AddItem(recordingEvidence);
+                evidenceAdded = true;
+            }
         }
         else
         {
-            DialogueManager.Instance.StartSingleLineDialogue(speakerName, inspectMessage);
+            DialogueManager.Instance.StartSingleLineDialogue(
+                speakerName,
+                inspectMessage
+            );
         }
     }
 

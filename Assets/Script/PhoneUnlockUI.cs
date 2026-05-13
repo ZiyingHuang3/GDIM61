@@ -39,7 +39,7 @@ public class PhoneUnlockUI : MonoBehaviour
 
         if (passwordInput.text == correctPassword)
         {
-            messageText.text = "Message found:\nA message conversation between Bob and Monica. Bob claims to have recorded evidence, possibly related to a scandal.";
+            messageText.text = "Correct Password! Message found:\nA message conversation between Bob and Monica. Bob claims to have recorded evidence, possibly related to a scandal.";
 
             if (!evidenceAdded && InventoryManager.Instance != null && phoneEvidence != null)
             {
