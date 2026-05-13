@@ -24,6 +24,9 @@ public class ComputerInteract : MonoBehaviour
         if (!Input.GetMouseButtonDown(0)) return;
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
+        if (DialogueManager.Instance != null &&
+    DialogueManager.Instance.IsDialogueActive)
+            return;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
 
