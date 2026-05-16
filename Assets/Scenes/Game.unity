@@ -431,7 +431,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1787407946}
@@ -9039,7 +9039,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 732738664}
@@ -10664,7 +10664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 11400000, guid: fc943a7c72d689c42a290f083e82a3c8, type: 2}
   Camera: {fileID: 11400000, guid: 016a07bc7f5844c79a090a43296e0394, type: 2}
-  Video: {fileID: 11400000, guid: 28253df9904941246bc973d749926b04, type: 2}
+  Video: {fileID: 11400000, guid: 1223843f557c10e49bcfbc4eaa30867d, type: 2}
   Notebook: {fileID: 11400000, guid: b56243ffe2b254e47bc784c805cc46ef, type: 2}
 --- !u!1 &1542896671
 GameObject:
