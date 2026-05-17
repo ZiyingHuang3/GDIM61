@@ -16,4 +16,6 @@ public class DialogueNode
 
     public int nextNodeIndex = -1;
     public int afterAllChoicesNextNode = -1;
+    public bool showFailedPanel;
+    public bool showSuccessPanel;
 }

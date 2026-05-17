@@ -19,6 +19,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject choicePanel;
     public Button[] choiceButtons;
     public TMP_Text[] choiceTexts;
+    [Header("Ending Panels")]
+    public GameObject failedPanel;
+    public GameObject successPanel;
 
     public bool IsDialogueActive { get; private set; }
 
@@ -132,6 +135,26 @@ if (player != null)
         }
 
         DialogueNode node = currentDialogueData.nodes[currentNodeIndex];
+
+        if (node.showFailedPanel)
+        {
+            EndDialogue();
+
+            if (failedPanel != null)
+                failedPanel.SetActive(true);
+
+            return;
+        }
+
+        if (node.showSuccessPanel)
+        {
+            EndDialogue();
+
+            if (successPanel != null)
+                successPanel.SetActive(true);
+
+            return;
+        }
         speakerNameText.text = node.speakerName;
         dialogueText.text = node.dialogueText;
 
@@ -175,8 +198,10 @@ if (player != null)
             choiceTexts[buttonIndex].text = choice.choiceText;
 
             int nextIndex = choice.nextNodeIndex;
+            DialogueChoice selectedChoice = choice;
+
             choiceButtons[buttonIndex].onClick.RemoveAllListeners();
-            choiceButtons[buttonIndex].onClick.AddListener(() => SelectChoice(nextIndex));
+            choiceButtons[buttonIndex].onClick.AddListener(() => SelectChoice(nextIndex, selectedChoice));
 
             buttonIndex++;
         }
@@ -194,18 +219,21 @@ if (player != null)
         }
     }
 
-    private void SelectChoice(int nextNodeIndex)
+    private void SelectChoice(int nextNodeIndex, DialogueChoice choice)
     {
-       visitedNodes.Add(nextNodeIndex);
+        Debug.Log("Choice clicked: " + choice.choiceText);
+        Debug.Log("Go to node: " + nextNodeIndex);
 
-       waitingForChoice = false;
-       choicePanel.SetActive(false);
+        visitedNodes.Add(nextNodeIndex);
 
-       currentNodeIndex = nextNodeIndex;
-       ShowCurrentNode();
+        waitingForChoice = false;
+        choicePanel.SetActive(false);
+
+        currentNodeIndex = nextNodeIndex;
+        ShowCurrentNode();
     }
 
-private void GoNext()
+    private void GoNext()
 {
     if (currentDialogueData == null)
     {
@@ -213,9 +241,13 @@ private void GoNext()
         return;
     }
 
-    DialogueNode node = currentDialogueData.nodes[currentNodeIndex];
+        DialogueNode node = currentDialogueData.nodes[currentNodeIndex];
 
-    if (node.nextNodeIndex == -1)
+        Debug.Log("Current Node: " + currentNodeIndex);
+        Debug.Log("Show Failed: " + node.showFailedPanel);
+        Debug.Log("Show Success: " + node.showSuccessPanel);
+
+        if (node.nextNodeIndex == -1)
     {
         EndDialogue();
         return;
