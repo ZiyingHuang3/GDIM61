@@ -1396,8 +1396,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: -1
     afterAllChoicesNextNode: 0
-    showFailedPanel: 1
-    showSuccessPanel: 0
+    showFailedPanel: 0
+    showSuccessPanel: 1
 --- !u!1 &603214756
 GameObject:
   m_ObjectHideFlags: 0

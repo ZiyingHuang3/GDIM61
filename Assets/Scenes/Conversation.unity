@@ -192,6 +192,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: Mr. Bob needs to do some preparations before the recording.
@@ -199,6 +201,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 2
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: ' I''ll go and help him sort out the materials.'
@@ -206,6 +210,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 3
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: He didn't like being disturbed, so I didn't go in.
@@ -213,6 +219,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 4
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: What kind of person do you think Mr. Bob is?
@@ -220,6 +228,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 5
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: He is very demanding and extremely picky.
@@ -227,6 +237,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 6
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: But everyone believes that he is a good person.
@@ -234,6 +246,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 7
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: These two are not in conflict.
@@ -241,6 +255,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 8
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: (Out of sight) ...
@@ -248,6 +264,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 9
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: What about Mr. Will?
@@ -255,6 +273,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 10
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: 'He is a very gentle person. '
@@ -262,6 +282,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 11
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: Bob believes that I always make mistakes in my work, and Mr. Will
@@ -270,6 +292,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 12
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: OK. Do you think Bob has shown any unusual behavior recently?
@@ -277,6 +301,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 13
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: 'Oh yes, he has recently started reading books about law, '
@@ -284,6 +310,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 14
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Merlin
     dialogueText: but he hasn't had any interviews related to it.
@@ -291,6 +319,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 15
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: OK. Thank you very much for your cooperation.
@@ -298,6 +328,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: -1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
 --- !u!212 &42722362
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -972,6 +1004,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: 'I know you, the renowned high school detective, Hazel. '
@@ -979,6 +1013,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 2
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: ' It''s my great honor to meet you. Although this is not a good
@@ -987,6 +1023,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 3
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: I'd like to ask you, what were you doing at 19:17 when you went
@@ -995,6 +1033,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 4
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: 'I was checking with him to confirm the truth to be revealed today. '
@@ -1002,6 +1042,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 5
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: This is the standard procedure.
@@ -1009,6 +1051,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 16
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: What kind of person do you think Bob is?
@@ -1016,6 +1060,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 7
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: He is a very good partner, very kind and easy to get along with.
@@ -1023,6 +1069,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 8
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: However, due to the pressure of work, he sometimes gets a bit grumpy.
@@ -1030,6 +1078,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 10
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: What do you think of Ms. Monica's view that Bob was trying to ruin
@@ -1038,6 +1088,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 11
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: But it's still acceptable to others.
@@ -1045,6 +1097,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 9
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: There are always some people who cannot accept the truth.
@@ -1052,6 +1106,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 12
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: How about Merlin?
@@ -1059,6 +1115,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 13
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: 'He is a very obedient child who works hard, '
@@ -1066,6 +1124,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 14
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: but he is not very careful.
@@ -1073,6 +1133,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 15
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: I understand. Thank you.
@@ -1080,6 +1142,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: -1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: I understand. Thank you.
@@ -1087,6 +1151,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 17
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: Did you have anything you wanted to tell Bob when you passed by
@@ -1095,6 +1161,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 18
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: Yes, I originally intended to explain the arrangements for today
@@ -1103,6 +1171,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 19
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Will
     dialogueText: But he doesn't like being disturbed when recording.
@@ -1110,6 +1180,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 6
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
 --- !u!212 &216191793
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1328,6 +1400,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: 'As far as I know, you were not invited. '
@@ -1335,6 +1409,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 2
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: Could you please tell me what you were looking for Bob for?
@@ -1342,6 +1418,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 3
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Monica
     dialogueText: I hope he can clarify what he said in the previous podcast.
@@ -1349,6 +1427,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 4
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: Could you ask him what he said that made you so angry?
@@ -1356,6 +1436,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 6
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: 'I will investigate this matter later. '
@@ -1363,6 +1445,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 7
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Monica
     dialogueText: I lost my job because of the lies he spread about me.
@@ -1370,6 +1454,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 5
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: What did you do in the recording studio for those eleven minutes?
@@ -1377,6 +1463,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 8
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Monica
     dialogueText: He refused to admit his mistakes, and we had a quarrel but it ended
@@ -1385,6 +1473,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: -1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: 'Miss Monica, you entered the recording studio at 19:00. '
@@ -1392,6 +1482,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
 --- !u!58 &320073179
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1946,6 +2038,55 @@ Transform:
   - {fileID: 1921052255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &497568107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497568109}
+  - component: {fileID: 497568108}
+  m_Layer: 0
+  m_Name: ' CursorManager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &497568108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497568107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73165b06ff791b74088a7ffedd0a218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalCursor: {fileID: 2800000, guid: 3806dda88bcb9d348b308e89dcacf80e, type: 3}
+  magnifierCursor: {fileID: 0}
+  investigableLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!4 &497568109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497568107}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.408953, y: -0.7731721, z: -0.0066890866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511734366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,6 +2547,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Police
     dialogueText: Understood. I will compile the offical reports for you.
@@ -2413,6 +2556,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 2
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 1
     speakerName: Police
     dialogueText: The detailed results have been added to your evidence.
@@ -2420,6 +2565,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: 3
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
   - speaker: 0
     speakerName: Hazel
     dialogueText: Got it.
@@ -2427,6 +2574,8 @@ MonoBehaviour:
     choices: []
     nextNodeIndex: -1
     afterAllChoicesNextNode: 0
+    showFailedPanel: 0
+    showSuccessPanel: 0
 --- !u!114 &836516891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3372,6 +3521,8 @@ MonoBehaviour:
   choicePanel: {fileID: 428194749}
   choiceButtons: []
   choiceTexts: []
+  failedPanel: {fileID: 0}
+  successPanel: {fileID: 0}
 --- !u!4 &1462376142
 Transform:
   m_ObjectHideFlags: 0
@@ -3871,3 +4022,4 @@ SceneRoots:
   - {fileID: 482689905}
   - {fileID: 836516886}
   - {fileID: 333367365}
+  - {fileID: 497568109}

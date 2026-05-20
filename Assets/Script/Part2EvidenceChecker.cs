@@ -21,7 +21,7 @@ public class Part2EvidenceChecker : MonoBehaviour
             Debug.Log("Part 2 evidence complete!");
           DialogueManager.Instance.StartSingleLineDialogue(
     "Cat",
-    "You've completed all the investigations and interrogations. Please return to where everything began.Hint: Evidence can no longer be re-examined."
+    "The case is reaching its end, detective. When you're ready, follow the arrow and make your final deduction."
 );  
         }
     }
