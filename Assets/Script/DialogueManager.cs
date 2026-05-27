@@ -141,17 +141,19 @@ if (player != null)
             EndDialogue();
 
             if (failedPanel != null)
-                failedPanel.SetActive(true);
-
+            {
+                FindObjectOfType<SceneBGM>().ShowFailed();
+            }
             return;
         }
 
         if (node.showSuccessPanel)
         {
             EndDialogue();
-
             if (successPanel != null)
-                successPanel.SetActive(true);
+            {
+                FindObjectOfType<SceneBGM>().ShowSuccess();
+            }
 
             return;
         }
